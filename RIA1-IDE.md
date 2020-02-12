@@ -40,7 +40,7 @@ Pour vérifier que le projet est fonctionnel, on va lancer le serveur. Pour fair
 npm start
 ```
 
-Si tout se passe bien, à la fin des opérations vous devriez avoir l'adresse "http://localhost:8000" qui permet d'accéder au site. Si une vue partielle est affichée avec la version de l'application seed de Angular, tout est fonctionnel.
+Si tout se passe bien, à la fin des opérations vous devriez avoir l'adresse "http://localhost:8000" qui permet d'accéder au site. Si une vue partielle est affichée avec la version de l'application seed de Angular, tout est fonctionnel. Vous pouvez aussi modifier le fichier "index.html" pour vérifier si les modifications sont prises en compte (actualiser l'onglet pour que les changements aient lieu).
 
 
 
