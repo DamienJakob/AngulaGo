@@ -23,7 +23,9 @@
 * The submenus take the entire page
 * The logo is on the menu bar
 * The title is still there
-* The form is identical to the desktop one
+* The form is similar to the desktop, one but :
+    * The logos in the city and room inputs have been removed
+    * The search button is now a logo
 
 ## Mobile
 
