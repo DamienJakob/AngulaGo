@@ -28,13 +28,17 @@ Pour télécharger l'exécutable, se rendre sur [https://www.jetbrains.com/webst
 
 ### Intégration du framework
 
-Avant de lancer un projet, vous devez installer [Node.JS](https://nodejs.org/en/) qui contient les commandes npm nécessaire pour faire des tests sur un serveur local. Laissez tout comme c'est mais cochez la case pour les "Tools for Native Modules" et lancez l'installation. Une fois que les installations sont terminées, nous pouvons créer un projet sur WebStorm. Pour créer un projet Angular, vous pouvez simplement choisir "AngularJS" quand vous faites un nouveau projet. Webstorm va ensuite nous créer un projet avec les fichiers nécessaire. 
+Avant de lancer un projet, vous devez installer [Node.JS](https://nodejs.org/en/) qui contient les commandes npm nécessaire pour faire des tests sur un serveur local. Laissez tout comme c'est mais cochez la case pour les "Tools for Native Modules" et lancez l'installation. Une fois que les installations sont terminées, nous pouvons créer un projet sur WebStorm. Pour créer un projet Angular, vous pouvez simplement choisir "AngularJS" quand vous faites un nouveau projet. WebStorm va ensuite nous créer un projet avec les fichiers nécessaire. Il se peut que les dépendances ne soient pas installé. Si c'est le cas et que vous n'avez pas de pop-up vous proposant d'installer les dépendances, lancez dans le terminal de WebStorm la commande :
+
+```
+npm install
+```
 
 
 
 ### Validation
 
-Pour vérifier que le projet est fonctionnel, on va lancer le serveur. Pour faire cela, lancez un invité de commande (de préférence Cmder) et rendez vous dans votre dossier de projet. Une fois dans le dossier, lancez la commande suivante :
+Pour vérifier que le projet est fonctionnel, on va lancer le serveur. Pour faire cela, vous avez la possibilité de lancer soit la commande via le terminal disponible dans WebStorm soit avec un invité de commande comme Cmder. Pour démarrer le serveur, lancez la commande suivante :
 
 ```
 npm start
