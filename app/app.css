@@ -23,3 +23,13 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 20px;
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
