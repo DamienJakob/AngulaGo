@@ -2,17 +2,9 @@
 
 .menu {
   list-style: none;
-  border-bottom: 0.1em solid black;
+  border-bottom: 0.1em solid #d9d9d9;
   margin-bottom: 2em;
   padding: 0 0 0.5em;
-}
-
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
 }
 
 .menu > li {
@@ -63,6 +55,10 @@ h3 {
   margin-left: 20px ;
   width: 200%;
   max-width: 800px;
+}
+
+.logo-image-header {
+  width: 20% ;
 }
 
 .footer {
