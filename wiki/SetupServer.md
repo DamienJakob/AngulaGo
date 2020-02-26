@@ -6,14 +6,6 @@
 
         sudo apt-get install nginx
         
-## Install NPM
-
-* Run that command
-
-        curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
-        sudo apt-get install -y nodejs
-        npm i http-server -g
-        
 ## Helpful command
 
 * How to start server
