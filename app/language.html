@@ -7,11 +7,11 @@
 <div ng-app="language" ng-controller="languageCtrl">
     <p>Language :
         <select
-                ng-options="language.name for language in languages track by language.id"
-                ng-model="language">
+                ng-options="(displayLanguage(language)) for language in languages track by language.id"
+                ng-model="language"
+                ng-change="loadLanguage()">
         </select>
     </p>
-    <button ng-click="loadLanguage()">Load language</button>
     <p>Language : {{ textContent.language }}</p>
 </div>
 
