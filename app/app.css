@@ -133,16 +133,16 @@ h3 {
   background-color: #fff;
 }
 
-.language-button {
+.language-select {
   font-size: 14px;
   padding: 0 16px;
   font-family: 'Roboto', sans-serif;
-  line-height: 64px;
   border: 0;
   background-color: #fff;
+  height: 64px;
 }
 
-.currency-select {
+.currency-select  {
   font-size: 14px;
   padding: 0 16px;
   font-family: 'Roboto', sans-serif;
