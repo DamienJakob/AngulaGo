@@ -1,16 +1,4 @@
-'use strict';
-
-// Declare app level module which depends on views, and core components
-angular.module('myApp', [
-    'ngRoute',
-    'myApp.homepage',
-    'myApp.search',
-    'myApp.version'
-]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-    $locationProvider.hashPrefix('!');
-
-    $routeProvider.otherwise({redirectTo: '/homepage'});
-}]).controller('appController', function ($scope, $http) {
+languageApplication.controller('languageCtrl', function ($scope, $http) {
     $scope.language = {
         "id": "fr",
         "name": "Français"
@@ -21,7 +9,7 @@ angular.module('myApp', [
                 $scope.textContent = response.data;
             });
     };
-    $scope.displayLanguage = function (language) {
+    $scope.displayLanguage = function(language) {
         return language.id.toUpperCase() + "-" + language.name
     };
 

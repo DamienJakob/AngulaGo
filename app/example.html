@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<style>
+    input.ng-invalid {
+        background-color: red;
+    }
+
+    <!--
+    ng-empty
+    ng-not-empty
+    ng-touched
+    ng-untouched
+    ng-valid
+    ng-invalid
+    ng-dirty
+    ng-pending
+    ng-pristine
+
+    -->
+</style>
+
+<body>
+
+<div ng-app="example" ng-controller="languageCtrl" ng-click="click()">
+    <p>Language : <input type="text" ng-model="language"></p>
+    <p>Language : {{ textContent.language }}</p>
+
+
+    <p>The language is (ng-bind) : <span data-ng-bind="language"></span></p>
+    <p>Expression : {{ language }}</p>
+
+    <p>Firstname : <input type="text" ng-model="person.firstName"></p>
+    <p>Lastname : <input type="text" ng-model="person.lastName"></p>
+    <!-- Filters
+    currency Format a number to a currency format.
+    date Format a date to a specified format.
+    filter Select a subset of items from an array.
+    json Format an object to a JSON string.
+    limitTo Limits an array/string, into a specified number of elements/characters.
+    lowercase Format a string to lower case.
+    number Format a number to a string.
+    orderBy Orders an array by an expression.
+    uppercase Format a string to upper case.
+    -->
+    <p>{{ person.firstName + " " + person.lastName | lowercase }}</p>
+    <p>{{ personFullName() }}</p>
+
+    <p>Scores</p>
+    <ul>
+        <li ng-repeat="point in points">
+            {{ point }}
+        </li>
+    </ul>
+
+    <p>Countries</p>
+    <button ng-click="orderCountriesBy('id')">ID</button>
+    <button ng-click="orderCountriesBy('name')">Name</button>
+    <ul>
+        <li ng-repeat="country in countries | orderBy:orderCountries | filter: { name:'n',} ">
+            {{ country.id + " : " + country.name }}
+        </li>
+    </ul>
+
+    <p>Countries filtered</p>
+    <p><input type="text" ng-model="countryfilter"></p>
+    <ul>
+        <li ng-repeat="country in countries | orderBy:'name' | filter: { name: countryfilter,} ">
+            {{ country.id + " : " + country.name }}
+        </li>
+    </ul>
+
+    <normal-directive></normal-directive>
+    <div normal-directive=""></div>
+    <div class="class-directive"></div>
+    <!-- directive: comment-directive -->
+
+    <form name="emailForm">
+        Email:
+        <input type="email" name="userEmail" ng-model="text" required>
+        <span ng-show="emailForm.userEmail.$error.email">Not a valid e-mail address</span>
+        <p>Status : </p>
+        <ul>
+            <li>Valid : {{emailForm.userEmail.$valid}}</li>
+            <li>Dirty : {{emailForm.userEmail.$dirty}}</li>
+            <li>Touched : {{emailForm.userEmail.$touched}}</li>
+        </ul>
+    </form>
+
+    <p>Clicks : {{ clickCount }}</p>
+</div>
+
+<script src="example/exampleApplication.js"></script>
+<script src="example/exampleCtrl.js"></script>
+
+</body>
+</html>
