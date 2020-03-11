@@ -5,7 +5,12 @@
 <body>
 
 <div ng-app="language" ng-controller="languageCtrl">
-    <p>Language : <input type="text" ng-model="language"></p>
+    <p>Language :
+        <select
+                ng-options="language.name for language in languages track by language.id"
+                ng-model="language">
+        </select>
+    </p>
     <button ng-click="loadLanguage()">Load language</button>
     <p>Language : {{ textContent.language }}</p>
 </div>
