@@ -5,7 +5,7 @@
 This project is an application skeleton for a typical [AngularJS][angularjs] web app. You can use it
 to quickly bootstrap your angular webapp projects and dev environment for these projects.
 
-The seed contains a sample AngularJS application and is preconfigured to install the AngularJS
+The seed contains a sample AngularJS application and is pre-configured to install the AngularJS
 framework and a bunch of development and testing tools for instant web development gratification.
 
 The seed app doesn't do much, just shows how to wire two controllers and views together.
@@ -49,7 +49,7 @@ help us manage and test the application.
   [Java Development Kit (JDK)][jdk] installed on your machine. Check out the section on
   [end-to-end testing](#e2e-testing) for more info.
 
-We have preconfigured `npm` to automatically copy the downloaded AngularJS files to `app/lib` so we
+We have pre-configured `npm` to automatically copy the downloaded AngularJS files to `app/lib` so we
 can simply do:
 
 ```
@@ -68,7 +68,7 @@ files by a web server.*
 
 ### Run the Application
 
-We have preconfigured the project with a simple development web server. The simplest way to start
+We have pre-configured the project with a simple development web server. The simplest way to start
 this server is:
 
 ```
@@ -117,7 +117,7 @@ There are two kinds of tests in the `angular-seed` application: Unit tests and e
 
 ### Running Unit Tests
 
-The `angular-seed` app comes preconfigured with unit tests. These are written in [Jasmine][jasmine],
+The `angular-seed` app comes pre-configured with unit tests. These are written in [Jasmine][jasmine],
 which we run with the [Karma][karma] test runner. We provide a Karma configuration file to run them.
 
 * The configuration is found at `karma.conf.js`.
@@ -195,7 +195,7 @@ If JDK is not already installed, you can download it [here][jdk-download].
 ## Updating AngularJS and other dependencies
 
 Since the AngularJS framework library code and tools are acquired through package managers (e.g.
-npm) you can use these tools to easily update the dependencies. Simply run the preconfigured script:
+npm) you can use these tools to easily update the dependencies. Simply run the pre-configured script:
 
 ```
 npm run update-deps
@@ -204,7 +204,7 @@ npm run update-deps
 This will call `npm update` and `npm run copy-libs`, which in turn will find and install the latest
 versions that match the version ranges specified in the `package.json` file.
 
-If you want to update a dependency to a version newer than what the specificed range would permit,
+If you want to update a dependency to a version newer than what the specified range would permit,
 you can change the version range in `package.json` and then run `npm run update-deps` as usual.
 
 
@@ -233,7 +233,7 @@ etc to function properly when an HTML page is opened via the `file://` scheme in
 
 ### Running the App during Development
 
-The `angular-seed` project comes preconfigured with a local development web server. It is a Node.js
+The `angular-seed` project comes pre-configured with a local development web server. It is a Node.js
 tool called [http-server][http-server]. You can start this web server with `npm start`, but you may
 choose to install the tool globally:
 
