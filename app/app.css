@@ -3,12 +3,11 @@
 .menu {
   list-style: none;
   border-bottom: 0.1em solid #d9d9d9;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+  padding-bottom: 8px;
 }
 
 .menu > li {
-  display: inline;
+  display: flex;
 }
 
 .menu > li + li:before {
@@ -24,12 +23,21 @@
   width: 100%;
 }
 
+.push {
+  margin-left: auto;
+}
+
 h2 {
   margin: 3px;
 }
 
 h3 {
   margin: 3px;
+}
+
+.header-controls{
+  display: flex;
+  justify-content: flex-end;
 }
 
 .logo {
@@ -60,7 +68,7 @@ h3 {
 }
 
 .logo-image-header {
-  width: 12% ;
+  width: 20% ;
   margin: 20px;
 }
 
@@ -105,6 +113,42 @@ h3 {
   color: #4a4a4a;
   font-size: 18px;
   outline: none;
+}
+
+.connection-button {
+  font-size: 14px;
+  padding: 0 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 64px;
+  border: 0;
+  background-color: #fff;
+}
+
+.menu-button {
+  font-size: 14px;
+  padding: 0 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 64px;
+  border: 0;
+  background-color: #fff;
+}
+
+.language-button {
+  font-size: 14px;
+  padding: 0 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 64px;
+  border: 0;
+  background-color: #fff;
+}
+
+.currency-select {
+  font-size: 14px;
+  padding: 0 16px;
+  font-family: 'Roboto', sans-serif;
+  border: 0;
+  background-color: #fff;
+  height: 64px;
 }
 
 .search-button {
