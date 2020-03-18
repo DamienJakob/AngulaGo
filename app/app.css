@@ -142,3 +142,13 @@ form {
   font-size: 18px;
   outline: none;
 }
+
+.npml {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.npmr {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
