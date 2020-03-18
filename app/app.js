@@ -15,10 +15,13 @@ angular.module('myApp', [
         "id": "fr",
         "name": "Français"
     };
+    $scope.currency = "EUR";
+
     $scope.loadLanguage = function () {
         $http.get('language/' + $scope.language.id + '.json')
             .then(function (response) {
                 $scope.textContent = response.data;
+                $scope.currency = $scope.textContent.defaultCurrency;
             });
     };
     $scope.displayShortLanguage = function (language = $scope.language) {
