@@ -10,7 +10,7 @@
             <select class="language-select"
                     ng-options="($parent.displayLanguage(language)) for language in $parent.languages track by language.id"
                     ng-model="$parent.language"
-                    ng-change="$parent.loadLanguage()">
+                    ng-change="selectLanguage()">
             </select>
         </div>
     </div>

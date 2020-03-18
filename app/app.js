@@ -11,12 +11,14 @@ angular.module('angulago', [
 
     $routeProvider.otherwise({redirectTo: '/homepage'});
 }]).controller('angulagoController', function ($scope, $http) {
+    // data
     $scope.language = {
         "id": "fr",
         "name": "Français"
     };
     $scope.currency = "EUR";
 
+    // functions
     $scope.loadLanguage = function () {
         $http.get('language/' + $scope.language.id + '.json')
             .then(function (response) {
@@ -31,9 +33,15 @@ angular.module('angulago', [
         return $scope.displayShortLanguage(language) + "-" + language.name;
     };
 
+    // init
     $http.get('language/languages.json')
         .then(function (response) {
             $scope.languages = response.data;
         });
     $scope.loadLanguage();
+
+    // event listeners
+    $scope.$on('loadLanguage', function () {
+        $scope.loadLanguage();
+    });
 });
