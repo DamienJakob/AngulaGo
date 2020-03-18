@@ -21,8 +21,11 @@ angular.module('myApp', [
                 $scope.textContent = response.data;
             });
     };
-    $scope.displayLanguage = function (language) {
-        return language.id.toUpperCase() + "-" + language.name
+    $scope.displayShortLanguage = function (language = $scope.language) {
+        return language.id.toUpperCase();
+    };
+    $scope.displayLanguage = function (language = $scope.language) {
+        return $scope.displayShortLanguage(language) + "-" + language.name;
     };
 
     $http.get('language/languages.json')

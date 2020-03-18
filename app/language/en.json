@@ -1,11 +1,13 @@
 {
   "language": "English",
   "pageTitle": "???",
-  "formTitle": "???",
-  "formSubTitle": "???",
-  "checkin": "???",
-  "checkout": "???",
-  "room": "???",
-  "search": "???",
-  "login": "???"
+  "formTitle": "Find your ideal hotel and compare prices from different websites",
+  "formSubTitle": "Try searching for a city, a specific hotel, or even a landmark!",
+  "checkin": "Check in",
+  "checkout": "Check out",
+  "room": "Room",
+  "search": "Search",
+  "login": "Log in",
+  "searchDestination": "Enter a hotel name or destination",
+  "menu": "Menu"
 }
