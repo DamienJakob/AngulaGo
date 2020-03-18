@@ -43,8 +43,8 @@
   width: 80% ;
 }
 
-.border-left {
-  border-left: 2px solid #d9d9d9;
+.border-right {
+  border-right: 2px solid #d9d9d9;
 }
 
 .logo-image-header {
@@ -143,6 +143,11 @@ form {
   outline: none;
 }
 
+.search-icon {
+  background-image: url("assets/search.png");
+  display: inline-block;
+}
+
 .npml {
   margin-left: 0 !important;
   padding-left: 0 !important;
@@ -151,4 +156,18 @@ form {
 .npmr {
   margin-right: 0 !important;
   padding-right: 0 !important;
+}
+
+@media screen and (max-width: 992px) {
+  .hide-md {
+    height: 0 !important;
+    width: 0 !important;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .hide-lg {
+    height: 0 !important;
+    width: 0 !important;
+  }
 }
