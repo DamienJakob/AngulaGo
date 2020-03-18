@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on views, and core components
-angular.module('myApp', [
+angular.module('angulago', [
     'ngRoute',
     'myApp.homepage',
     'myApp.search',
@@ -10,7 +10,7 @@ angular.module('myApp', [
     $locationProvider.hashPrefix('!');
 
     $routeProvider.otherwise({redirectTo: '/homepage'});
-}]).controller('appController', function ($scope, $http) {
+}]).controller('angulagoController', function ($scope, $http) {
     $scope.language = {
         "id": "fr",
         "name": "Français"
