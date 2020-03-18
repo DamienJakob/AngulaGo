@@ -145,7 +145,8 @@ form {
 
 .search-icon {
   background-image: url("assets/search.png");
-  display: inline-block;
+  height: 32px;
+  width: 32px;
 }
 
 .npml {
@@ -162,12 +163,14 @@ form {
   .hide-md {
     height: 0 !important;
     width: 0 !important;
+    display: none;
   }
 }
 
-@media screen and (min-width: 993px) {
+/**@media screen and (min-width: 993px) and (max-width: 9999px) {
   .hide-lg {
     height: 0 !important;
     width: 0 !important;
+    display: none;
   }
-}
+}**/
