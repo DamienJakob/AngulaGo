@@ -1,11 +1,13 @@
 {
   "language": "Français",
   "pageTitle": "???",
-  "formTitle": "???",
-  "formSubTitle": "???",
-  "checkin": "???",
-  "checkout": "???",
-  "room": "???",
-  "search": "???",
-  "login": "???"
+  "formTitle": "Trouvez l’hôtel idéal et comparez les prix de différents sites Web",
+  "formSubTitle": "Essayez de rechercher une ville, un hôtel ou même un lieu connu.",
+  "checkin": "Arrivée",
+  "checkout": "Départ",
+  "room": "Chambre",
+  "search": "Chercher",
+  "login": "Se connecter",
+  "searchDestination": "Saisir un nom d’hôtel ou une destination",
+  "menu": "Menu"
 }
