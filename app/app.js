@@ -9,9 +9,10 @@ function AngulagoController($scope, $http) {
     $scope.currency = "EUR";
 
     // functions
-    $scope.loadLanguage = function () {
-        $http.get('language/' + $scope.language.id + '.json')
+    $scope.loadLanguage = function (language = $scope.language) {
+        $http.get('language/' + language.id + '.json')
             .then(function (response) {
+                $scope.language = language;
                 $scope.textContent = response.data;
                 $scope.currency = $scope.textContent.defaultCurrency;
             });
@@ -28,8 +29,8 @@ function AngulagoController($scope, $http) {
     $scope.loadLanguage();
 
     // event listeners
-    $scope.$on('loadLanguage', function () {
-        $scope.loadLanguage();
+    $scope.$on('loadLanguage', function (event, language) {
+        $scope.loadLanguage(language);
     });
 }
 
