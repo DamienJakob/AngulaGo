@@ -1,10 +1,7 @@
 'use strict';
 
 function MenuController($scope, $http) {
-    // data
-    // get the default language from parent
-    $scope.language = $scope.$parent.language;
-
+    // functions
     $scope.selectLanguage = function () {
         $scope.$emit('loadLanguage', $scope.language);
     };
@@ -17,6 +14,11 @@ function MenuController($scope, $http) {
         .then(function (response) {
             $scope.languages = response.data;
         });
+    this.$onInit = () => {
+        // get the default language from parent
+        // we have to wait until the bindings are done
+        $scope.language = this.defaultLanguage;
+    };
 }
 
 angular.module('angulago').component('menu', {
@@ -25,5 +27,6 @@ angular.module('angulago').component('menu', {
     bindings: {
         currency: '=',
         textContent: '<',
+        defaultLanguage: '<',
     }
 });
