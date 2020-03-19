@@ -1,7 +1,35 @@
 'use strict';
 
+function AngulagoController($scope, $http) {
+    // data
+    $scope.language = {
+        "id": "fr",
+        "name": "Français"
+    };
+
+    // functions
+    $scope.loadLanguage = function (language = $scope.language) {
+        $http.get('language/' + language.id + '.json')
+            .then(function (response) {
+                $scope.language = language;
+                $scope.textContent = response.data;
+            });
+    };
+    $scope.displayLanguage = function (language = $scope.language) {
+        return language.id.toUpperCase();
+    };
+
+    // init
+    $scope.loadLanguage();
+
+    // event listeners
+    $scope.$on('loadLanguage', function (event, language) {
+        $scope.loadLanguage(language);
+    });
+}
+
 // Declare app level module which depends on views, and core components
-angular.module('myApp', [
+angular.module('angulago', [
     'ngRoute',
     'myApp.homepage',
     'myApp.search',
@@ -10,30 +38,4 @@ angular.module('myApp', [
     $locationProvider.hashPrefix('!');
 
     $routeProvider.otherwise({redirectTo: '/homepage'});
-}]).controller('appController', function ($scope, $http) {
-    $scope.language = {
-        "id": "fr",
-        "name": "Français"
-    };
-    $scope.currency = "EUR";
-
-    $scope.loadLanguage = function () {
-        $http.get('language/' + $scope.language.id + '.json')
-            .then(function (response) {
-                $scope.textContent = response.data;
-                $scope.currency = $scope.textContent.defaultCurrency;
-            });
-    };
-    $scope.displayShortLanguage = function (language = $scope.language) {
-        return language.id.toUpperCase();
-    };
-    $scope.displayLanguage = function (language = $scope.language) {
-        return $scope.displayShortLanguage(language) + "-" + language.name;
-    };
-
-    $http.get('language/languages.json')
-        .then(function (response) {
-            $scope.languages = response.data;
-        });
-    $scope.loadLanguage();
-});
+}]).controller('angulagoController', AngulagoController);
