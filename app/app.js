@@ -16,11 +16,9 @@ function AngulagoController($scope, $http) {
                 $scope.currency = $scope.textContent.defaultCurrency;
             });
     };
-    $scope.displayShortLanguage = function (language = $scope.language) {
-        return language.id.toUpperCase();
-    };
+
     $scope.displayLanguage = function (language = $scope.language) {
-        return $scope.displayShortLanguage(language) + "-" + language.name;
+        return language.id.toUpperCase();
     };
 
     // init
