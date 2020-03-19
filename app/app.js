@@ -16,7 +16,6 @@ function AngulagoController($scope, $http) {
                 $scope.currency = $scope.textContent.defaultCurrency;
             });
     };
-
     $scope.displayLanguage = function (language = $scope.language) {
         return language.id.toUpperCase();
     };
