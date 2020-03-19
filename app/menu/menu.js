@@ -17,5 +17,6 @@ angular.module('angulago').component('menu', {
     controller: MenuController,
     bindings: {
         currency: '=',
+        textContent: '<',
     }
 });
