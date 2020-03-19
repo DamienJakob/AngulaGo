@@ -6,7 +6,6 @@ function AngulagoController($scope, $http) {
         "id": "fr",
         "name": "Français"
     };
-    $scope.currency = "EUR";
 
     // functions
     $scope.loadLanguage = function (language = $scope.language) {
@@ -14,7 +13,6 @@ function AngulagoController($scope, $http) {
             .then(function (response) {
                 $scope.language = language;
                 $scope.textContent = response.data;
-                $scope.currency = $scope.textContent.defaultCurrency;
             });
     };
     $scope.displayLanguage = function (language = $scope.language) {
@@ -22,10 +20,6 @@ function AngulagoController($scope, $http) {
     };
 
     // init
-    $http.get('language/languages.json')
-        .then(function (response) {
-            $scope.languages = response.data;
-        });
     $scope.loadLanguage();
 
     // event listeners
