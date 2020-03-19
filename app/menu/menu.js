@@ -2,8 +2,8 @@
 
 function MenuController($scope, $http) {
     // functions
-    $scope.selectLanguage = function () {
-        $scope.$emit('loadLanguage', $scope.language);
+    $scope.selectLanguage = function (language = $scope.language) {
+        $scope.$emit('loadLanguage', language);
     };
     $scope.displayLanguage = function (language) {
         return language.id.toUpperCase() + "-" + language.name;
