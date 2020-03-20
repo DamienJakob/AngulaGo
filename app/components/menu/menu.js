@@ -30,7 +30,7 @@ function MenuController($scope, $http) {
 }
 
 angular.module('angulago').component('menu', {
-    templateUrl: 'menu/menu.html',
+    templateUrl: 'components/menu/menu.html',
     controller: MenuController,
     bindings: {
         textContent: '<',
