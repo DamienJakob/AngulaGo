@@ -1,0 +1,20 @@
+<div class="content">
+    <div class="title">
+        <a class="logo" href="index.html">
+            <img class="logo-image" src="../assets/Logo.png" alt="AngulaGo"/>
+        </a>
+        <div class="title-tag">
+            <h2>{{ $ctrl.textContent.formTitle }}</h2>
+            <h3>{{ $ctrl.textContent.formSubTitle }}</h3>
+        </div>
+    </div>
+    <div class="inputs-search">
+        <form action="#!/search" >
+            <input class="text-input" type="text" placeholder="{{ $ctrl.textContent.searchDestination }}">
+            <input class="text-input" type="text" placeholder="{{ $ctrl.textContent.checkin }}">
+            <input class="text-input" type="text" placeholder="{{ $ctrl.textContent.checkout }}">
+            <button class="guests-button" type="button">{{ $ctrl.textContent.room }}</button>
+            <button class="search-button" type="submit" >{{ $ctrl.textContent.search }}</button>
+        </form>
+    </div>
+</div>
