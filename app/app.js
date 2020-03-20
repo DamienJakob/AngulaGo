@@ -31,7 +31,7 @@ function AngulagoController($scope, $http) {
 // Declare app level module which depends on views, and core components
 angular.module('angulago', [
     'ngRoute',
-    'myApp.homepage',
+    'angulago.homepage',
     'myApp.search',
     'myApp.version'
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {

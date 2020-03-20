@@ -1,15 +1,14 @@
 'use strict';
 
-angular.module('myApp.homepage', ['ngRoute'])
+function HomepageController() {
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/homepage', {
-    templateUrl: 'homepage/homepage.html',
-    controller: 'homepageCtrl'
-  });
-}])
+}
 
-.controller('homepageCtrl', [function() {
-   
-}]);
+angular.module('angulago.homepage', ['ngRoute'])
+    .config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.when('/homepage', {
+            templateUrl: 'homepage/homepage.html',
+            controller: HomepageController,
+        });
+    }]);
 
