@@ -32,7 +32,7 @@ function AngulagoController($scope, $http) {
 angular.module('angulago', [
     'ngRoute',
     'angulago.homepage',
-    'myApp.search',
+    'angulago.search',
     'myApp.version'
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');
