@@ -9,7 +9,7 @@ function AngulagoController($scope, $http) {
 
     // functions
     $scope.loadLanguage = function (language = $scope.language) {
-        $http.get('language/' + language.id + '.json')
+        $http.get('data/languages/' + language.id + '.json')
             .then(function (response) {
                 $scope.language = language;
                 $scope.textContent = response.data;
@@ -32,7 +32,7 @@ function AngulagoController($scope, $http) {
 angular.module('angulago', [
     'ngRoute',
     'angulago.homepage',
-    'myApp.search',
+    'angulago.search',
     'myApp.version'
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');

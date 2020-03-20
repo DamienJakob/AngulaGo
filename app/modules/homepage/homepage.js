@@ -3,7 +3,7 @@
 angular.module('angulago.homepage', ['ngRoute'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/homepage', {
-            templateUrl: 'homepage/homepage.html',
+            templateUrl: 'modules/homepage/homepage.html',
         });
     }]);
 

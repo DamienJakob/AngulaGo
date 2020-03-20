@@ -10,14 +10,14 @@ function MenuController($scope, $http) {
     };
 
     // init
-    $http.get('language/languages.json')
-        .then(function (response) {
-            $scope.languages = response.data;
-        });
     this.$onInit = () => {
-        // get the default language from parent
+        // get the default languages from parent
         // we have to wait until the bindings are done
         $scope.language = this.defaultLanguage;
+        $http.get('data/languages.json')
+            .then(function (response) {
+                $scope.languages = response.data;
+            });
     };
 
     // watcher
@@ -30,7 +30,7 @@ function MenuController($scope, $http) {
 }
 
 angular.module('angulago').component('menu', {
-    templateUrl: 'menu/menu.html',
+    templateUrl: 'components/menu/menu.html',
     controller: MenuController,
     bindings: {
         textContent: '<',
