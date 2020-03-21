@@ -27,6 +27,7 @@ app/                  --> fichiers sources de l'application
       selectCurrency.html         --> template du composant
       selectCurrency.js           --> déclaration du composant
     ...
+  data/                   --> contient les données (langues, monnaies) de l'application (format json)
   modules/                --> modules de l'application
     homepage/                 --> éléments relatifs au module : homepage
       homepage.html              --> template du module
@@ -51,9 +52,67 @@ documentation/        --> documentation annexe de l'application
 * [Visualisation du DOM](documentation/DOM_visualisation.md)
 
 ## Structure de l'application
-### Modules
-### Composants
 ### Vues
+* Chaque vue contient le menu et le pied de page.
+* Deux vues sont disponibles : page principale et recherche.
+    * La page principale contient le menu
+    * La page de recherche est vide. Elle est utilisée afin de tester la navigation.
+
+### Modules et composants
+* L'application est constituée de modules
+* Un module contient plusieurs composants, directives, pipes, etc...
+* Un composant contient un template, et de la logique interne au composant.
+* Un composant peut faire appel à un autre composant de son module
+
+### Modules
+#### angulago (app.js)
+* Racine de l'appplication. Lié au layout. 
+* Contient les composants nécessaires au menu et au pied de page.
+* Charge le module correspondant à la page à afficher selon l'URL (single page application).
+* Charge le principal fichier de language.
+* Recharge le fichier de langue lorsqu'il en reçoit la demande.
+* Transmet l'information aux enfants lorsque la langue change.
+
+#### homepage
+* Page principale de l'application
+* Contient les composants de la page
+
+#### search
+* Page obtenue en cliquant sur le bouton "chercher" de la page principale.
+* Page vide pour l'instant. Utilisé principalement afin de tester la navigation.
+
+#### version
+* Petit module chargé d'afficher la version de l'application.
+ 
+### Composants
+#### menu
+* Module : angulago
+* Menu de l'application.
+* Parent des autres composants du menu.
+
+#### selectLanguage
+* Module : angulago
+* Utilisé comme enfant du composant menu
+* Contient la liste déroulant de sélection de la monnaie.
+* Charge la liste des langues. 
+* Transmet l'information aux parents lorsqu'une langue est sélectionnée.
+
+#### selectCurrency
+* Module : angulago
+* Utilisé comme enfant du composant menu
+* Contient la liste déroulant de sélection de la monnaie.
+* Charge le fichier de monnaie.
+* Recharge le fichier de monnaie, dans la langue voulue, lorsqu'il en reçoit l'ordre.
+
+#### footer
+* Module : angulago
+* Pied de page. Affiche la version de l'application.
+* Fait appel au module version.
+
+#### tripSearchForm
+* Module : homepage
+* Formulaire de recherche de la page principale
+* Mis sous forme de composant plutôt qu'écrit directement dans le module afin de faciliter l'ajout futur de nouveaux éléments dans la page.
 
 ## Chargement
 ### Pas de lazy loading
