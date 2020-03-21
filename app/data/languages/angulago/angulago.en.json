@@ -7,14 +7,5 @@
       "mainCurrencies": "Top currencies",
       "allCurrencies": "All currencies"
     }
-  },
-  "homepage": {
-    "searchDestination": "Enter a hotel name or destination",
-    "formTitle": "Find your ideal hotel and compare prices from different websites",
-    "formSubTitle": "Try searching for a city, a specific hotel, or even a landmark!",
-    "checkin": "Check in",
-    "checkout": "Check out",
-    "room": "Room",
-    "search": "Search"
   }
 }
