@@ -1,5 +1,18 @@
 <select class="currency-select" ng-model="currency">
+    <optgroup label="Devises principales">
+        <option ng-repeat="currency in currencies.filter(isMainCurrency)"
+                value="{{ currency.id }}"
+                class="option"
+        >
+            {{ displayCurrency(currency) }}
+        </option>
+    </optgroup>
     <optgroup label="Toutes les devises">
-        <option ng-repeat="currency in currencies" class="option" value="{{ currency.id }}">{{ displayCurrency(currency) }}</option>
+        <option ng-repeat="currency in currencies"
+                value="{{ currency.id }}"
+                class="option"
+        >
+            {{ displayCurrency(currency) }}
+        </option>
     </optgroup>
 </select>

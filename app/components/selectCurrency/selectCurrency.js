@@ -6,6 +6,10 @@ function SelectCurrencyController($scope, $http) {
         return currency.id.toUpperCase() + " - " + currency.name;
     };
 
+    $scope.isMainCurrency = function(currency) {
+        return currency.mainCurrency;
+    };
+
     this.$onInit = () => {
         $scope.currency = this.textContent.defaultCurrency;
         $http.get('data/currencies.json')
