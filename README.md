@@ -147,12 +147,26 @@ Malheureusement, AngularJs ne permet pas nativement de le faire.
 Il existe des librairies externes qui peuvent le faire, notamment ocLazyLoad.
 Nous n'y avons pour l'instant pas fait recours, préférant rester focalisés sur le framework.
 
+### Chargement des données
+
+
+
 ### Données
 Les données sont enregistrées au format json dans le dossier data. 
 Elle sont chergées par le composant/module en utilisant le service $http d'AngularJs, qui utilise XMLHttpRequest.
+
 #### Structure des données
+##### Liste des langues
+Il y un fichier contenant la liste des langues, dans le répertoire data, nommé languages.json.
+Il contient la liste des longues, nommées dans leur propre language.
+
+Données :
+* tableau de langues
+    * id : identifiant unique de la langue (exemple : FR)
+    * name : nom de la langue, dans son propre language (exemple : Deutsch)
+
 ##### Monnaies
-Il y a un fichier de monnaie par langue 
+Il y a un fichier de monnaie par langue, dans le répertoire data/currencies.
 (à noter que pour éviter une perte de temps inutile seules les principales monnaies ont été traduites).
 
 Données :
@@ -161,6 +175,26 @@ Données :
     * id : abréviation unique de la monnaie (CHF, USD, ...)
     * name : nom de la monnaie
     * mainCurrency : booléen. Indique si la monnaie doit figurer dans la sélection des monnaies courantes ou non)
+
+##### Contenus traduits
+Il y a un fichier de contenu par langue par module, dans le répertoire data/languages.
+Deux modules contiennent du texte traduit : angulago, et homepage.
+Les fichiers sont nommés selon la manière suivante : homepage/homepage.fr.json.
+
+Données angulago :
+* language : langue du fichier
+* menu : données du composant menu
+    * login : traduction de "login"
+    * menu : traduction de "menu"
+    * selectCurrencies : données du composant selectCurrencies
+        * mainCurrencies : traduction de "monnaies principales"
+        * allCurrencies : traduction de "toutes les monnaies"
+
+Données homepage :
+* language : langue du fichier
+* tripSearchForm : données du composant menu
+    * search : traduction de "recherche"
+    * ...
 
 ## Comportement responsive
 AngularJs ne s'occupe pas du tout du comportement respnsive de l'application. 
