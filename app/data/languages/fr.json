@@ -1,6 +1,5 @@
 {
   "language": "Français",
-  "defaultCurrency": "CHF",
   "formTitle": "Trouvez l’hôtel idéal et comparez les prix de différents sites Web",
   "formSubTitle": "Essayez de rechercher une ville, un hôtel ou même un lieu connu.",
   "checkin": "Arrivée",
@@ -9,5 +8,9 @@
   "search": "Chercher",
   "login": "Se connecter",
   "searchDestination": "Saisir un nom d’hôtel ou une destination",
-  "menu": "Menu"
+  "menu": "Menu",
+  "selectCurrencies": {
+    "mainCurrencies": "Devises principales",
+    "allCurrencies": "Toutes les devises"
+  }
 }

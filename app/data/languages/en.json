@@ -1,6 +1,5 @@
 {
   "language": "English",
-  "defaultCurrency": "USD",
   "formTitle": "Find your ideal hotel and compare prices from different websites",
   "formSubTitle": "Try searching for a city, a specific hotel, or even a landmark!",
   "checkin": "Check in",
@@ -9,5 +8,9 @@
   "search": "Search",
   "login": "Log in",
   "searchDestination": "Enter a hotel name or destination",
-  "menu": "Menu"
+  "menu": "Menu",
+  "selectCurrencies": {
+    "mainCurrencies": "Top currencies",
+    "allCurrencies": "All currencies"
+  }
 }

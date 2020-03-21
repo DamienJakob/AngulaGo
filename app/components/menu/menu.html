@@ -10,8 +10,9 @@
             <button type="button" class="menu-button">
                 <span>{{ $ctrl.textContent.menu }}</span>
             </button>
-            <select-currency default-language="$ctrl.defaultLanguage" text-content="$ctrl.textContent">
-            </select-currency>
+            <select-currency default-language="$ctrl.defaultLanguage"
+                             text-content="$ctrl.textContent.selectCurrencies"
+            ></select-currency>
             <select-language default-language="$ctrl.defaultLanguage">
             </select-language>
         </div>

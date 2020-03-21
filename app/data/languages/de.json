@@ -1,6 +1,5 @@
 {
   "language": "Deutsch",
-  "defaultCurrency": "EUR",
   "formTitle": "Finde Dein ideales Hotel und vergleiche Preise von verschiedenen Webseiten",
   "formSubTitle": "Suche nach einer Stadt, einem Hotel oder sogar nach einer Sehenswürdigkeit!",
   "checkin": "Anreise",
@@ -9,5 +8,9 @@
   "search": "Suchen",
   "login": "Einloggen",
   "searchDestination": "Hotelnamen oder Reiseziel eingeben",
-  "menu": "Menü"
+  "menu": "Menü",
+  "selectCurrencies": {
+    "mainCurrencies": "Hauptwährungen",
+    "allCurrencies": "Alle Währungen"
+  }
 }
