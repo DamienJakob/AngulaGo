@@ -7,7 +7,6 @@ function SelectCurrencyController($scope, $http) {
         $http.get('data/currencies.json')
             .then(function (response) {
                 $scope.currencies = response.data.currencies;
-                console.log($scope.currencies);
             });
     };
 
@@ -21,7 +20,7 @@ function SelectCurrencyController($scope, $http) {
 }
 
 angular.module('angulago').component('selectCurrency', {
-    templateUrl: 'components/selectCurrency/selectCurrency.html',
+    templateUrl: 'components/selectCurrency/selectCurrencyTest.html',
     controller: SelectCurrencyController,
     bindings: {
         textContent: '<',
