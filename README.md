@@ -148,8 +148,38 @@ Il existe des librairies externes qui peuvent le faire, notamment ocLazyLoad.
 Nous n'y avons pour l'instant pas fait recours, préférant rester focalisés sur le framework.
 
 ### Chargement des données
+Il y a deux moments où il faut charger des données : lors de la création de la page et lors du changement de langue.
 
+Il a été choisi que chaque module est responsable de charger ses traductions.
+Cela permet d'éviter de charger les données de modules et de leurs composants non utilisés par la page,
+sans devoir effectuer une requête par composant.
+Les composants restent responsables de charger des données plus complexes qu'une simple traduction de texte.
+C'est pourquoi le composant selectLanguage s'occupe de charger la liste des langues disponibles,
+et le composant selectCurrency s'occupe de charger la liste des monnaies de la langue appropriée.
 
+Les données à charger sont les suivantes :
+* traductions du module angulago : chargées par le module angulago, mis à disposition des composants enfants en lecture seule
+* traductions du module homepage : chargées par le module homepage, mis à disposition des composants enfants en lecture seule
+* liste des langues : chargée par le composant selectLanguage, pas besoin de la recharger à un changement de langue
+* liste des monnaies : chargée par le composant selectCurrency
+
+A noter que le composant selectCurrency utilise la liste des monnaies qu'il a chargée pour afficher les monnaies disponibles,
+mais qu'il utilise aussi les traductions classiques pour afficher ses autres textes.
+
+#### Séquence lors du changement de langue
+1. L'utilisateur sélectionne une nouvelle langue dans la liste déroulante.
+1. Le composant selectLanguage, qui contient la lise déroulante, émet le message 'languageRequest' à ses parents, accompagné de la langue requise.
+1. Le composant menu est un parent de selectLanguage, mais n'écoute pas ce message. Le module angulago, par contre, réagit au message.
+1. Le module angulago effectue deux actions :
+    * Il émet une requête XMLHttpRequest auprès du serveur pour obtenir son fichier de language, dans la langue requise.
+    * Il broadcast le le message 'setLanguage', accompagné de la langue requise, à tous ses enfants.
+1. La plupart des enfants ignorent le message, mais certains y réagissent :
+    * Le module homepage émet une requête XMLHttpRequest auprès du serveur pour obtenir son fichier de language, dans la langue requise.
+    * Le composant selectCurrencies émet une requête XMLHttpRequest auprès du serveur pour obtenir sa lise de monnaies, dans la langue requise.                     
+1. Lorsque le module angulago reçoit ses traductions, il met à jour ses données de texte.
+1. Le contenu du DOM est mis à jour pour respecter les nouvelles données, pour le module et ses enfants, qui ont accès en lecture aux données de texte du module.
+1. De même pour le module homepage.
+1. Le composant selectCurrencies met à jour sa liste de monnaies, qui est ensuite mise à jour dans le DOM. Il sélectionne après cela la monnaie par défaut associée au language.
 
 ### Données
 Les données sont enregistrées au format json dans le dossier data. 
