@@ -5,11 +5,7 @@
             <button type="button" class="connection-button" ><span>{{ $ctrl.textContent.login }}</span></button>
             <button type="button" class="menu-button" ><span>{{ $ctrl.textContent.menu }}</span></button>
             <select-currency text-content="$ctrl.textContent"></select-currency>
-            <select class="language-select"
-                    ng-options="(displayLanguage(language)) for language in languages track by language.id"
-                    ng-model="language"
-                    ng-change="selectLanguage(language)">
-            </select>
+            <select-language default-language="$ctrl.defaultLanguage"></select-language>
         </div>
     </div>
 </ul>
