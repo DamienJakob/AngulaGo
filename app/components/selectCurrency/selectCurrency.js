@@ -28,7 +28,7 @@ function SelectCurrencyController($scope, $http) {
 }
 
 angular.module('angulago').component('selectCurrency', {
-    templateUrl: 'components/selectCurrency/selectCurrencyTest.html',
+    templateUrl: 'components/selectCurrency/selectCurrency.html',
     controller: SelectCurrencyController,
     bindings: {
         textContent: '<',
