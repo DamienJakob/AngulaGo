@@ -2,29 +2,33 @@
 
 function SelectCurrencyController($scope, $http) {
 
-    $scope.displayCurrency = function(currency) {
-        return currency.id.toUpperCase() + " - " + currency.name;
-    };
-
-    // main currencies filter
-    $scope.isMainCurrency = function(currency) {
-        return currency.mainCurrency;
-    };
-
-    this.$onInit = () => {
-        $scope.currency = this.textContent.defaultCurrency;
-        $http.get('data/currencies/currencies.fr.json')
+    // methods
+    $scope.loadCurrencies = function (language = this.defaultLanguage) {
+        $http.get('data/currencies/currencies.' + language.id + '.json')
             .then(function (response) {
                 $scope.currencies = response.data.currencies;
+                $scope.currency = response.data.defaultCurrency;
             });
     };
 
-    // watcher
-    // when textContent is updated, set the currency to the default currency of textContent
-    $scope.$watch('$ctrl.textContent', function (newTextContent, oldTextContent) {
-        if (newTextContent != oldTextContent) {
-            $scope.currency = newTextContent.defaultCurrency;
-        }
+    $scope.displayCurrency = function (currency) {
+        return currency.id.toUpperCase() + " - " + currency.name;
+    };
+
+    // filter : main currencies
+    $scope.isMainCurrency = function (currency) {
+        return currency.mainCurrency;
+    };
+
+
+    // init
+    this.$onInit = () => {
+        $scope.loadCurrencies(this.defaultLanguage);
+    };
+
+    // event listeners
+    $scope.$on('setLanguage', function (event, language) {
+        $scope.loadCurrencies(language);
     });
 }
 
@@ -32,6 +36,7 @@ angular.module('angulago').component('selectCurrency', {
     templateUrl: 'components/selectCurrency/selectCurrency.html',
     controller: SelectCurrencyController,
     bindings: {
+        defaultLanguage: '<',
         textContent: '<',
     }
 });

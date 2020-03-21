@@ -3,7 +3,7 @@
 function SelectLanguageController($scope, $http) {
     // functions
     $scope.selectLanguage = function (language = $scope.language) {
-        $scope.$emit('loadLanguage', language);
+        $scope.$emit('requestLanguage', language);
     };
     $scope.displayLanguage = function (language) {
         return language.id.toUpperCase() + "-" + language.name;

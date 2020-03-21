@@ -1,11 +1,19 @@
 <ul class="menu">
     <div class="header-controls">
-        <a id="showLogoHeader" href="index.html"><img class="logo-image-header" src="../../assets/Logo.png" alt="AngulaGo"/></a>
+        <a id="showLogoHeader" href="index.html">
+            <img class="logo-image-header" src="../../assets/Logo.png" alt="AngulaGo"/>
+        </a>
         <div class="push">
-            <button type="button" class="connection-button" ><span>{{ $ctrl.textContent.login }}</span></button>
-            <button type="button" class="menu-button" ><span>{{ $ctrl.textContent.menu }}</span></button>
-            <select-currency text-content="$ctrl.textContent"></select-currency>
-            <select-language default-language="$ctrl.defaultLanguage"></select-language>
+            <button type="button" class="connection-button">
+                <span>{{ $ctrl.textContent.login }}</span>
+            </button>
+            <button type="button" class="menu-button">
+                <span>{{ $ctrl.textContent.menu }}</span>
+            </button>
+            <select-currency default-language="$ctrl.defaultLanguage" text-content="$ctrl.textContent">
+            </select-currency>
+            <select-language default-language="$ctrl.defaultLanguage">
+            </select-language>
         </div>
     </div>
 </ul>
