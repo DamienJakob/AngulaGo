@@ -6,13 +6,14 @@ function SelectCurrencyController($scope, $http) {
         return currency.id.toUpperCase() + " - " + currency.name;
     };
 
+    // main currencies filter
     $scope.isMainCurrency = function(currency) {
         return currency.mainCurrency;
     };
 
     this.$onInit = () => {
         $scope.currency = this.textContent.defaultCurrency;
-        $http.get('data/currencies.json')
+        $http.get('data/currencies/currencies.fr.json')
             .then(function (response) {
                 $scope.currencies = response.data.currencies;
             });
