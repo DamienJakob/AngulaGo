@@ -7,9 +7,6 @@
 ## Mises à jour
 1. Mise à jour d'Angular et des dépendances : `npm run update-deps`
 
-## Choix de l'IDE
-Voir le document [IDE.md](documentation/IDE.md).
-
 ## Lancement de l'application
 Lancer le serveur web de développement : `npm start`
 
@@ -17,6 +14,9 @@ URL de l'application : `localhost:8000`
 
 ## Serveur
 Voir le document [SetupServer.md](documentation/SetupServer.md).
+
+## Choix de l'IDE
+Voir le document [IDE.md](documentation/IDE.md).
 
 ## Structure de fichiers
 ```
@@ -42,7 +42,13 @@ app/                  --> fichiers sources de l'application
   app.js                 --> module principal de l'application, avec contrôleur et configuration
   index.html             --> layout de l'application
 documentation/        --> documentation annexe de l'application
+  sources                  --> fichiers et documents de conception de la documentation
 ```
+
+## Analyse
+* [Mockups de l'application](documentation/mockups.pdf)
+* [Etude du comportement responsive](documentation/responsive%20behavior.md)
+* [Visualisation du DOM](documentation/DOM_visualisation.md)
 
 ## Structure de l'application
 ### Modules
