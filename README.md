@@ -148,7 +148,20 @@ Il existe des librairies externes qui peuvent le faire, notamment ocLazyLoad.
 Nous n'y avons pour l'instant pas fait recours, préférant rester focalisés sur le framework.
 
 ### Données
+Les données sont enregistrées au format json dans le dossier data. 
+Elle sont chergées par le composant/module en utilisant le service $http d'AngularJs, qui utilise XMLHttpRequest.
 #### Structure des données
+##### Monnaies
+Il y a un fichier de monnaie par langue 
+(à noter que pour éviter une perte de temps inutile seules les principales monnaies ont été traduites).
+
+Données :
+* defaultCurrency: id de la langue par défaut du language (pour currencies.fr.json : "CHF")
+* currencies: liste des monnaies, qui sont elles-mêmes des objets
+    * id : abréviation unique de la monnaie (CHF, USD, ...)
+    * name : nom de la monnaie
+    * mainCurrency : booléen. Indique si la monnaie doit figurer dans la sélection des monnaies courantes ou non)
 
 ## Comportement responsive
-
+AngularJs ne s'occupe pas du tout du comportement respnsive de l'application. 
+Il faut donc utiliser le css comme à l'accoutumée.
