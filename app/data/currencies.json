@@ -1,0 +1,233 @@
+{
+  "defaultCurrency": "CHF",
+  "currencies": [
+    {
+      "id": "AED",
+      "name": "Dirham des E.A.U"
+    },
+    {
+      "id": "ARS",
+      "name": "Peso argentin"
+    },
+    {
+      "id": "AUD",
+      "name": "Dollar australien"
+    },
+    {
+      "id": "AZN",
+      "name": "Manat azerbaïdjanais"
+    },
+    {
+      "id": "BGN",
+      "name": "Lev bulgare"
+    },
+    {
+      "id": "BHD",
+      "name": "Dinar bahreïni"
+    },
+    {
+      "id": "BRL",
+      "name": "Réal brésilien"
+    },
+    {
+      "id": "CAD",
+      "name": "Dollar canadien"
+    },
+    {
+      "id": "CHF",
+      "name": "Franc suisse"
+    },
+    {
+      "id": "CLP",
+      "name": "Peso chilien"
+    },
+    {
+      "id": "CNY",
+      "name": "Yuan chinois"
+    },
+    {
+      "id": "COP",
+      "name": "Peso colombien"
+    },
+    {
+      "id": "CZK",
+      "name": "Couronne tchèque"
+    },
+    {
+      "id": "DKK",
+      "name": "Couronne danoise"
+    },
+    {
+      "id": "DZD",
+      "name": "Dinar algérien"
+    },
+    {
+      "id": "EGP",
+      "name": "Livre égyptienne"
+    },
+    {
+      "id": "EUR",
+      "name": "Euro"
+    },
+    {
+      "id": "GBP",
+      "name": "Livre sterling"
+    },
+    {
+      "id": "HKD",
+      "name": "Dollar Hong Kong"
+    },
+    {
+      "id": "HRK",
+      "name": "Kuna croate"
+    },
+    {
+      "id": "HUF",
+      "name": "Forint hongrois"
+    },
+    {
+      "id": "IDR",
+      "name": "Roupie indonésienne"
+    },
+    {
+      "id": "ILS",
+      "name": "Nouveau shekel israélien"
+    },
+    {
+      "id": "INR",
+      "name": "Roupie indienne"
+    },
+    {
+      "id": "JOD",
+      "name": "Dinar jordanien"
+    },
+    {
+      "id": "JPY",
+      "name": "Yen japonais"
+    },
+    {
+      "id": "KRW",
+      "name": "Won sud-coréen"
+    },
+    {
+      "id": "KWD",
+      "name": "Dinar koweïtien"
+    },
+    {
+      "id": "KZT",
+      "name": "Tenge kazakh"
+    },
+    {
+      "id": "LBP",
+      "name": "Livre libanaise"
+    },
+    {
+      "id": "MAD",
+      "name": "Dirham marocain"
+    },
+    {
+      "id": "MDL",
+      "name": "Leu moldave"
+    },
+    {
+      "id": "MXN",
+      "name": "Peso mexicain"
+    },
+    {
+      "id": "MYR",
+      "name": "Ringgit malais"
+    },
+    {
+      "id": "NGN",
+      "name": "Naira nigérien"
+    },
+    {
+      "id": "NOK",
+      "name": "Couronne norvégienne"
+    },
+    {
+      "id": "NZD",
+      "name": "Dollar néo-zélandais"
+    },
+    {
+      "id": "OMR",
+      "name": "Rial omanais"
+    },
+    {
+      "id": "PEN",
+      "name": "Nuevo sol péruvien"
+    },
+    {
+      "id": "PHP",
+      "name": "Peso philippin"
+    },
+    {
+      "id": "PLN",
+      "name": "Zloty polonais"
+    },
+    {
+      "id": "QAR",
+      "name": "Riyal qatari"
+    },
+    {
+      "id": "RON",
+      "name": "Leu roumain"
+    },
+    {
+      "id": "RSD",
+      "name": "Dinar serbe"
+    },
+    {
+      "id": "RUB",
+      "name": "Rouble russe"
+    },
+    {
+      "id": "SAR",
+      "name": "Riyal saoudien"
+    },
+    {
+      "id": "SEK",
+      "name": "Couronne suédoise"
+    },
+    {
+      "id": "SGD",
+      "name": "Dollar de Singapour"
+    },
+    {
+      "id": "THB",
+      "name": "Baht thaïlandais"
+    },
+    {
+      "id": "TND",
+      "name": "Dinar tunisien"
+    },
+    {
+      "id": "TRY",
+      "name": "Livre turque"
+    },
+    {
+      "id": "TWD",
+      "name": "Nouveau dollar taïwanais"
+    },
+    {
+      "id": "UAH",
+      "name": "Hyrvnia ukrainien"
+    },
+    {
+      "id": "USD",
+      "name": "Dollar américain"
+    },
+    {
+      "id": "UYU",
+      "name": "Peso uruguayen"
+    },
+    {
+      "id": "VND",
+      "name": "Dong vietnamien"
+    },
+    {
+      "id": "ZAR",
+      "name": "Rand sud-africain"
+    }
+  ]
+}

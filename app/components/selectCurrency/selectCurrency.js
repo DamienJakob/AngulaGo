@@ -1,9 +1,14 @@
 'use strict';
 
-function SelectCurrencyController($scope) {
+function SelectCurrencyController($scope, $http) {
 
     this.$onInit = () => {
         $scope.currency = this.textContent.defaultCurrency;
+        $http.get('data/currencies.json')
+            .then(function (response) {
+                $scope.currencies = response.data.currencies;
+                console.log($scope.currencies);
+            });
     };
 
     // watcher
