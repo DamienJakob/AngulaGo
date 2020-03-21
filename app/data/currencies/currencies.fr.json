@@ -1,0 +1,290 @@
+{
+  "defaultCurrency": "CHF",
+  "currencies": [
+    {
+      "id": "AED",
+      "name": "Dirham des E.A.U",
+      "mainCurrency": false
+    },
+    {
+      "id": "ARS",
+      "name": "Peso argentin",
+      "mainCurrency": false
+    },
+    {
+      "id": "AUD",
+      "name": "Dollar australien",
+      "mainCurrency": false
+    },
+    {
+      "id": "AZN",
+      "name": "Manat azerbaïdjanais",
+      "mainCurrency": false
+    },
+    {
+      "id": "BGN",
+      "name": "Lev bulgare",
+      "mainCurrency": false
+    },
+    {
+      "id": "BHD",
+      "name": "Dinar bahreïni",
+      "mainCurrency": false
+    },
+    {
+      "id": "BRL",
+      "name": "Réal brésilien",
+      "mainCurrency": false
+    },
+    {
+      "id": "CAD",
+      "name": "Dollar canadien",
+      "mainCurrency": false
+    },
+    {
+      "id": "CHF",
+      "name": "Franc suisse",
+      "mainCurrency": false
+    },
+    {
+      "id": "CLP",
+      "name": "Peso chilien",
+      "mainCurrency": false
+    },
+    {
+      "id": "CNY",
+      "name": "Yuan chinois",
+      "mainCurrency": false
+    },
+    {
+      "id": "COP",
+      "name": "Peso colombien",
+      "mainCurrency": false
+    },
+    {
+      "id": "CZK",
+      "name": "Couronne tchèque",
+      "mainCurrency": false
+    },
+    {
+      "id": "DKK",
+      "name": "Couronne danoise",
+      "mainCurrency": false
+    },
+    {
+      "id": "DZD",
+      "name": "Dinar algérien",
+      "mainCurrency": false
+    },
+    {
+      "id": "EGP",
+      "name": "Livre égyptienne",
+      "mainCurrency": false
+    },
+    {
+      "id": "EUR",
+      "name": "Euro",
+      "mainCurrency": true
+    },
+    {
+      "id": "GBP",
+      "name": "Livre sterling",
+      "mainCurrency": true
+    },
+    {
+      "id": "HKD",
+      "name": "Dollar Hong Kong",
+      "mainCurrency": false
+    },
+    {
+      "id": "HRK",
+      "name": "Kuna croate",
+      "mainCurrency": false
+    },
+    {
+      "id": "HUF",
+      "name": "Forint hongrois",
+      "mainCurrency": false
+    },
+    {
+      "id": "IDR",
+      "name": "Roupie indonésienne",
+      "mainCurrency": false
+    },
+    {
+      "id": "ILS",
+      "name": "Nouveau shekel israélien",
+      "mainCurrency": false
+    },
+    {
+      "id": "INR",
+      "name": "Roupie indienne",
+      "mainCurrency": false
+    },
+    {
+      "id": "JOD",
+      "name": "Dinar jordanien",
+      "mainCurrency": false
+    },
+    {
+      "id": "JPY",
+      "name": "Yen japonais",
+      "mainCurrency": false
+    },
+    {
+      "id": "KRW",
+      "name": "Won sud-coréen",
+      "mainCurrency": false
+    },
+    {
+      "id": "KWD",
+      "name": "Dinar koweïtien",
+      "mainCurrency": false
+    },
+    {
+      "id": "KZT",
+      "name": "Tenge kazakh",
+      "mainCurrency": false
+    },
+    {
+      "id": "LBP",
+      "name": "Livre libanaise",
+      "mainCurrency": false
+    },
+    {
+      "id": "MAD",
+      "name": "Dirham marocain",
+      "mainCurrency": false
+    },
+    {
+      "id": "MDL",
+      "name": "Leu moldave",
+      "mainCurrency": false
+    },
+    {
+      "id": "MXN",
+      "name": "Peso mexicain",
+      "mainCurrency": false
+    },
+    {
+      "id": "MYR",
+      "name": "Ringgit malais",
+      "mainCurrency": false
+    },
+    {
+      "id": "NGN",
+      "name": "Naira nigérien",
+      "mainCurrency": false
+    },
+    {
+      "id": "NOK",
+      "name": "Couronne norvégienne",
+      "mainCurrency": false
+    },
+    {
+      "id": "NZD",
+      "name": "Dollar néo-zélandais",
+      "mainCurrency": false
+    },
+    {
+      "id": "OMR",
+      "name": "Rial omanais",
+      "mainCurrency": false
+    },
+    {
+      "id": "PEN",
+      "name": "Nuevo sol péruvien",
+      "mainCurrency": false
+    },
+    {
+      "id": "PHP",
+      "name": "Peso philippin",
+      "mainCurrency": false
+    },
+    {
+      "id": "PLN",
+      "name": "Zloty polonais",
+      "mainCurrency": false
+    },
+    {
+      "id": "QAR",
+      "name": "Riyal qatari",
+      "mainCurrency": false
+    },
+    {
+      "id": "RON",
+      "name": "Leu roumain",
+      "mainCurrency": false
+    },
+    {
+      "id": "RSD",
+      "name": "Dinar serbe",
+      "mainCurrency": false
+    },
+    {
+      "id": "RUB",
+      "name": "Rouble russe",
+      "mainCurrency": false
+    },
+    {
+      "id": "SAR",
+      "name": "Riyal saoudien",
+      "mainCurrency": false
+    },
+    {
+      "id": "SEK",
+      "name": "Couronne suédoise",
+      "mainCurrency": false
+    },
+    {
+      "id": "SGD",
+      "name": "Dollar de Singapour",
+      "mainCurrency": false
+    },
+    {
+      "id": "THB",
+      "name": "Baht thaïlandais",
+      "mainCurrency": false
+    },
+    {
+      "id": "TND",
+      "name": "Dinar tunisien",
+      "mainCurrency": false
+    },
+    {
+      "id": "TRY",
+      "name": "Livre turque",
+      "mainCurrency": false
+    },
+    {
+      "id": "TWD",
+      "name": "Nouveau dollar taïwanais",
+      "mainCurrency": false
+    },
+    {
+      "id": "UAH",
+      "name": "Hyrvnia ukrainien",
+      "mainCurrency": false
+    },
+    {
+      "id": "USD",
+      "name": "Dollar américain",
+      "mainCurrency": true
+    },
+    {
+      "id": "UYU",
+      "name": "Peso uruguayen",
+      "mainCurrency": false
+    },
+    {
+      "id": "VND",
+      "name": "Dong vietnamien",
+      "mainCurrency": false
+    },
+    {
+      "id": "ZAR",
+      "name": "Rand sud-africain",
+      "mainCurrency": false
+    }
+  ]
+}

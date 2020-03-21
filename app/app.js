@@ -23,8 +23,9 @@ function AngulagoController($scope, $http) {
     $scope.loadLanguage();
 
     // event listeners
-    $scope.$on('loadLanguage', function (event, language) {
+    $scope.$on('requestLanguage', function (event, language) {
         $scope.loadLanguage(language);
+        $scope.$broadcast('setLanguage', language);
     });
 }
 
