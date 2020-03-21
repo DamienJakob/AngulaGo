@@ -43,7 +43,7 @@
     },
     {
       "id": "CHF",
-      "name": "Franc suisse",
+      "name": "Swiss Frank",
       "mainCurrency": false
     },
     {
@@ -88,7 +88,7 @@
     },
     {
       "id": "GBP",
-      "name": "Livre sterling",
+      "name": "British Pound",
       "mainCurrency": true
     },
     {
@@ -268,7 +268,7 @@
     },
     {
       "id": "USD",
-      "name": "Dollar américain",
+      "name": "US dollar",
       "mainCurrency": true
     },
     {
