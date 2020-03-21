@@ -181,6 +181,9 @@ mais qu'il utilise aussi les traductions classiques pour afficher ses autres tex
 1. De même pour le module homepage.
 1. Le composant selectCurrencies met à jour sa liste de monnaies, qui est ensuite mise à jour dans le DOM. Il sélectionne après cela la monnaie par défaut associée au language.
 
+### Diagramme de séquence
+[Diagramme de séquence (pdf)](documentation/load%20languages%20sequence%20diagram.pdf) de chargement d'une langue.
+
 ### Données
 Les données sont enregistrées au format json dans le dossier data. 
 Elle sont chergées par le composant/module en utilisant le service $http d'AngularJs, qui utilise XMLHttpRequest.
