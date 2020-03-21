@@ -1,0 +1,20 @@
+{
+  "language": "Français",
+  "menu": {
+    "login": "Se connecter",
+    "menu": "Menu",
+    "selectCurrencies": {
+      "mainCurrencies": "Devises principales",
+      "allCurrencies": "Toutes les devises"
+    }
+  },
+  "homepage": {
+    "formTitle": "Trouvez l’hôtel idéal et comparez les prix de différents sites Web",
+    "formSubTitle": "Essayez de rechercher une ville, un hôtel ou même un lieu connu.",
+    "searchDestination": "Saisir un nom d’hôtel ou une destination",
+    "checkin": "Arrivée",
+    "checkout": "Départ",
+    "room": "Chambre",
+    "search": "Chercher"
+  }
+}

@@ -9,7 +9,7 @@ function AngulagoController($scope, $http) {
 
     // functions
     $scope.loadLanguage = function (language = $scope.language) {
-        $http.get('data/languages/' + language.id + '.json')
+        $http.get('data/languages/angulago/angulago.' + language.id + '.json')
             .then(function (response) {
                 $scope.language = language;
                 $scope.textContent = response.data;

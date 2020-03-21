@@ -1,4 +1,4 @@
-<trip-search-form text-content="textContent"></trip-search-form>
+<trip-search-form text-content="textContent.tripSearchForm"></trip-search-form>
 
 <!-- TODO move this content into tripSearchForm/tripSearchform.html, and adapt bindings-->
 <div class="content">
@@ -7,17 +7,17 @@
             <img class="logo-image" src="../../assets/Logo.png" alt="AngulaGo"/>
         </a>
         <div class="title-tag">
-            <h2>{{ textContent.formTitle }}</h2>
-            <h3>{{ textContent.formSubTitle }}</h3>
+            <h2>{{ textContent.homepage.formTitle }}</h2>
+            <h3>{{ textContent.homepage.formSubTitle }}</h3>
         </div>
     </div>
     <div class="inputs-search">
         <form action="#!/search" >
-            <input class="text-input" type="text" placeholder="{{ textContent.searchDestination }}">
-            <input class="text-input" type="text" placeholder="{{ textContent.checkin }}">
-            <input class="text-input" type="text" placeholder="{{ textContent.checkout }}">
-            <button class="guests-button" type="button">{{ textContent.room }}</button>
-            <button class="search-button" type="submit" >{{ textContent.search }}</button>
+            <input class="text-input" type="text" placeholder="{{ textContent.homepage.searchDestination }}">
+            <input class="text-input" type="text" placeholder="{{ textContent.homepage.checkin }}">
+            <input class="text-input" type="text" placeholder="{{ textContent.homepage.checkout }}">
+            <button class="guests-button" type="button">{{ textContent.homepage.room }}</button>
+            <button class="search-button" type="submit" >{{ textContent.homepage.search }}</button>
         </form>
     </div>
 </div>

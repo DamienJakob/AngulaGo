@@ -1,0 +1,12 @@
+{
+  "language": "Deutsch",
+  "tripSearchForm": {
+    "searchDestination": "Hotelnamen oder Reiseziel eingeben",
+    "formTitle": "Finde Dein ideales Hotel und vergleiche Preise von verschiedenen Webseiten",
+    "formSubTitle": "Suche nach einer Stadt, einem Hotel oder sogar nach einer Sehenswürdigkeit!",
+    "checkin": "Anreise",
+    "checkout": "Abreise",
+    "room": "Zimmer",
+    "search": "Suchen"
+  }
+}
