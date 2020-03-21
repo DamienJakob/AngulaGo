@@ -114,9 +114,41 @@ documentation/        --> documentation annexe de l'application
 * Formulaire de recherche de la page principale
 * Mis sous forme de composant plutôt qu'écrit directement dans le module afin de faciliter l'ajout futur de nouveaux éléments dans la page.
 
+### DOM
+DOM, vu sous l'angle des modules et composants
+
+```
+<html module:angulago>
+  <head></head>
+  <body>
+    <menu (composant d'angulago)>
+      <selectCurrency (composant d'angulago)></selectCurrency>
+      <selectLanguage (composant d'angulago)></selectLanguage>
+    </menu>
+
+    <div module:homepage (chargé par angulago, selon l'URL)>
+      <composant:tripSearchForm (composant de homepage)></tripSearchForm>
+    </div>
+
+    <footer (composant d'angulago), utilise le module version>
+    </footer>
+  </body>
+</html>
+```
+
 ## Chargement
 ### Pas de lazy loading
+Si la page index.html, on remarquera que tous les composants et modules sont chargés en même temps. 
+Pour une application de cette taille, cela n'est pas vraiment un problème puisqu'ils sont tous utilisés, 
+mais cela devient problématique si la taille de l'application augmente.
+
+Il serait donc pratique de faire du lazy loading. 
+Malheureusement, AngularJs ne permet pas nativement de le faire.
+Il existe des librairies externes qui peuvent le faire, notamment ocLazyLoad.
+Nous n'y avons pour l'instant pas fait recours, préférant rester focalisés sur le framework.
+
 ### Données
 #### Structure des données
 
 ## Comportement responsive
+
