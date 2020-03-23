@@ -136,6 +136,9 @@ DOM, vu sous l'angle des modules et composants
 </html>
 ```
 
+### Diagramme de classes
+[Diagramme de classe (pdf)](documentation/class%20diagram.pdf)
+
 ## Chargement
 ### Pas de lazy loading
 Si la page index.html, on remarquera que tous les composants et modules sont chargés en même temps. 
