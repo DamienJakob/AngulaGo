@@ -139,6 +139,31 @@ DOM, vu sous l'angle des modules et composants
 ### Diagramme de classes
 [Diagramme de classe (pdf)](documentation/class%20diagram.pdf)
 
+#### Pas de diagramme de conception
+Pour la conception de l'application, nous n'avons pas fait recours à un diagramme de classe. 
+En effet, nous n'avions pas encore les compétences nécessaires afin de prévoir à l'avance les classes utilisées.
+
+Voici comment l'application a été pensée initialement :
+* Un module root contenant toute l'application
+* Un composant menu, avec le menu de l'application
+    * Potentiellement des sous-composants gérant les fonctions les plus complexes du menu (langue, et monnaie dans une moindre mesure)
+* un composant footer
+* Un module par page de l'application
+
+Pour générer l'application, nous avons eu recours à un processus itératif.
+En partant de l'application monolithique, nous avons créé un premier composant, d'abord puisant ses données directement dans son parent.
+Puis les méthodes et données spécifiques au composant ont été déplacées du parent au composant. 
+Ensuite, pour les données que le composant doit lire chez le parent, des bindings ont été ajoutés.
+
+Au final, la structure est assez similaire à ce qui avait été prévu, 
+et nous avons maintenant une bien meilleure connaissance de la manière dont les informations peuvent être transmises entre modules et composants.
+
+#### Pas de diagramme de classe autogénéré
+Nous n'avous pour l'instant pas trouvé de bonne solution afin d'obtenir un diagramme de classe autogénéré avec AngularJs.
+La piste la plus prometteuse semble être le plugin [grunt-angular-architecture-graph](https://github.com/lucalanca/grunt-angular-architecture-graph), 
+qui est en version 0.2.6 depuis plusieurs années, utilise Grunt, ne peut analyser qu'un seul fichier js, 
+et n'apporte pas d'informations sur les méthodes et attributs des classes.
+
 ## Chargement
 ### Pas de lazy loading
 Si la page index.html, on remarquera que tous les composants et modules sont chargés en même temps. 
