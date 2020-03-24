@@ -164,6 +164,42 @@ La piste la plus prometteuse semble être le plugin [grunt-angular-architecture-
 qui est en version 0.2.6 depuis plusieurs années, utilise Grunt, ne peut analyser qu'un seul fichier js, 
 et n'apporte pas d'informations sur les méthodes et attributs des classes.
 
+### Séquence de chargement de la page
+1. Chargement d'angularjs. Cela doit évidemment être le premier script à être chargé.
+1. Chargement des modules. Une fois chargé, angularjs crée le module. 
+    * A noter que même si le module angulago dépend des autres modules, l'ordre de chargement des modules n'a pas d'importance, car angularjs se débrouille pour faire les liens.
+1. Chargement des composants. Une fois chargé, le composant se rattache à son parent.
+    * A noter que le composant doit être chargé après son module, mais peut être chargé avant d'autres modules.
+1. Le module angulago :
+    * Il analyse l'URL : redirection de `/` sur `/homepage`
+    * Il effectue une requête afin d'obtenir ses données de texte
+    * Il associe le composant menu à la balise menu, et le composant footer à la balise footer
+    * Il effectue ses bindings : titre, bindings du menu
+1. Composant menu appliqué par angulago
+    * Il effectue une requête afin d'obtenir son contenu html
+    * Le module angulago associe les composants selectLanguage et selectCurrencies à leurs balises respectives
+    * Il effectue ses bindings à son contenu html, selectLanguage et selectCurrencies.
+1. Composant selectLanguage appliqué par angulago
+    * Il effectue une requête afin d'obtenir son contenu html
+    * Il effectue une requête afin d'obtenir la liste des langues
+    * Il effectue ses bindings : génération des options de la liste déroulante
+1. Composant selectCurrencies appliqué par angulago
+    * Il effectue une requête afin d'obtenir son contenu html
+    * Il effectue une requête afin d'obtenir la liste des monnaies dans la langue appropriée
+    * Il effectue ses bindings : génération des options de la liste déroulante
+1. Composant footer appliqué par angulago
+    * Il effectue une requête afin d'obtenir son contenu html
+    * Le module version effectue un binding sur la version à afficher
+1. Le module homepage : 
+    * Il analyse l'URL, et comme il s'agit de son url il s'associe à la vue.
+    * Il effectue une requête afin d'obtenir le contenu html de la page, et l'intègre à la vue
+    * Il effectue une requête afin d'obtenir ses données de texte
+    * Il associe le composant tripSearchForm à la balise tripSearchForm.
+    * Il effectue ses bindings avec le composant tripSearchForm
+1. Le composant tripSearchForm
+    * Il effectue une requête afin d'obtenir son contenu html
+    * Il effectue ses bindings à son contenu html
+
 ## Chargement
 ### Pas de lazy loading
 Si la page index.html, on remarquera que tous les composants et modules sont chargés en même temps. 
