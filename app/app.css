@@ -165,12 +165,16 @@ form {
     width: 0 !important;
     display: none;
   }
+
+  .search-button {
+    width: 100%;
+  }
 }
 
-/**@media screen and (min-width: 993px) and (max-width: 9999px) {
+@media screen and (min-width: 993px) and (max-width: 9999px) {
   .hide-lg {
     height: 0 !important;
     width: 0 !important;
     display: none;
   }
-}**/
+}
