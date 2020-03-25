@@ -201,7 +201,7 @@ et n'apporte pas d'informations sur les méthodes et attributs des classes.
     * Il effectue ses bindings à son contenu html
 
 ### Diagramme de séquence
-[Diagramme de séquence (pdf)](./documentation/load%20languages%20sequence%20diagram.pdf)
+[Diagramme de séquence (pdf)](./documentation/HomePageSequenceDiagram.pdf)
 
 ## Chargement
 ### Pas de lazy loading
