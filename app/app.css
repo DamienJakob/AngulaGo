@@ -27,44 +27,24 @@
   margin-left: auto;
 }
 
-h2 {
-  margin: 3px;
-}
-
-h3 {
-  margin: 3px;
-}
-
 .header-controls{
   display: flex;
   justify-content: flex-end;
 }
 
-.logo {
-  display: flex;
+.center-items {
+  align-items: center;
   justify-content: center;
+  display: flex;
 }
-
 
 .logo-image {
   max-width: 380px;
   width: 80% ;
 }
 
-.title {
-  display: flex;
-  align-items: center;
-  margin-bottom: 18px;
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
-.title-tag {
-  border-left: 2px solid #d9d9d9;
-  padding-left: 20px ;
-  margin-left: 20px ;
-  width: 200%;
-  max-width: 800px;
+.border-right {
+  border-right: 2px solid #d9d9d9;
 }
 
 .logo-image-header {
@@ -82,16 +62,15 @@ h3 {
   text-align: center;
 }
 
-/* --- Inputs --- */
-
-.inputs-search {
-  display: flex;
-  flex-wrap: wrap;
+form {
+  width: 100%;
 }
+
+/* --- Inputs --- */
 
 .text-input {
   border: 1px solid #9b9b9b;
-  width: 200px;
+  width: 100%;
   height: 32px;
   padding-left: 10px;
   padding-right: 18px;
@@ -104,8 +83,8 @@ h3 {
 
 .guests-button {
   border: 1px solid #9b9b9b;
-  width: 120px;
-  height: 38px;
+  width: 100%;
+  height: 32px;
   background-color: white;
   text-align: center;
   padding-top: 3px;
@@ -154,7 +133,7 @@ h3 {
 .search-button {
   border: 1px solid #9b9b9b;
   width: 120px;
-  height: 38px;
+  height: 32px;
   background-color: #007fad;
   text-align: center;
   padding-top: 3px;
@@ -162,4 +141,40 @@ h3 {
   color: white;
   font-size: 18px;
   outline: none;
+}
+
+.search-icon {
+  background-image: url("assets/search.png");
+  padding: 12px;
+  margin-bottom: 3px;
+}
+
+.npml {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.npmr {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+@media screen and (max-width: 992px) {
+  .hide-md {
+    height: 0 !important;
+    width: 0 !important;
+    display: none;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 993px) and (max-width: 9999px) {
+  .hide-lg {
+    height: 0 !important;
+    width: 0 !important;
+    display: none;
+  }
 }

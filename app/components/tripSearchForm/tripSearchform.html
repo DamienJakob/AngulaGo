@@ -1,20 +1,49 @@
 <div class="content">
-    <div class="title">
-        <a class="logo" href="index.html">
-            <img class="logo-image" src="../../assets/Logo.png" alt="AngulaGo"/>
-        </a>
-        <div class="title-tag">
-            <h2>{{ $ctrl.textContent.formTitle }}</h2>
-            <h3>{{ $ctrl.textContent.formSubTitle }}</h3>
+    <div class="container-fluid mb-2">
+        <div class="row">
+            <div class="hide-md col-lg-2 offset-lg-1 center-items border-right">
+                <a href="index.html">
+                    <img class="logo-image" src="../assets/Logo.png" alt="AngulaGo"/>
+                </a>
+            </div>
+            <div class="col-md-12 col-lg-8">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <h3>{{ $ctrl.textContent.formTitle }}</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4>{{ $ctrl.textContent.formSubTitle }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="inputs-search">
-        <form action="#!/search" >
-            <input class="text-input" type="text" placeholder="{{ $ctrl.textContent.searchDestination }}">
-            <input class="text-input" type="text" placeholder="{{ $ctrl.textContent.checkin }}">
-            <input class="text-input" type="text" placeholder="{{ $ctrl.textContent.checkout }}">
-            <button class="guests-button" type="button">{{ $ctrl.textContent.room }}</button>
-            <button class="search-button" type="submit" >{{ $ctrl.textContent.search }}</button>
+    <div class="container-fluid center-items">
+        <form action="#!/search">
+            <div class="row">
+                <div class="col-md-4 col-lg-3 offset-lg-1">
+                    <input class="text-input" type="text" placeholder="{{ $ctrl.textContent.searchDestination }}">
+                </div>
+                <div class="col-md-2 col-lg-2 npmr">
+                    <input class="text-input" type="text" placeholder="{{ $ctrl.textContent.checkin }}">
+                </div>
+                <div class="col-md-2 col-lg-2 npml">
+                    <input class="text-input" type="text" placeholder="{{ $ctrl.textContent.checkout }}">
+                </div>
+                <div class="col-md-3 col-lg-2">
+                    <button class="guests-button" type="button">{{ $ctrl.textContent.room }}</button>
+                </div>
+                <div class="col-md-1 col-lg-1">
+                    <button class="search-button" type="submit">
+                        <img class="hide-lg search-icon" />
+                        <span class="hide-md">{{ $ctrl.textContent.search }}</span>
+                    </button>
+                </div>
+            </div>
         </form>
     </div>
 </div>
