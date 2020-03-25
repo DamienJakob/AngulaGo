@@ -145,8 +145,8 @@ form {
 
 .search-icon {
   background-image: url("assets/search.png");
-  height: 24px;
-  width: 24px;
+  padding: 12px;
+  margin-bottom: 3px;
 }
 
 .npml {
