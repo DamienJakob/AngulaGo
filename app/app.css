@@ -159,7 +159,32 @@ form {
   padding-right: 0 !important;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
+  .hide-sm {
+    height: 0 !important;
+    width: 0 !important;
+    display: none;
+  }
+
+  .form {
+    background: #f3f3f3;
+    padding: 10px 0;
+  }
+
+  .form form div div {
+    margin-bottom: 8px;
+  }
+
+  .search-button {
+    margin-top: 10px;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
   .hide-md {
     height: 0 !important;
     width: 0 !important;
