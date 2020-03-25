@@ -1,11 +1,19 @@
-# AngulaGo AngularJS project
+# Documentation AngulaGo
+## Installation
+1. Cloner le [répertoire git de l'application](https://github.com/CPNV-ES/AngulaGo)
+1. Installer Node.js et npm, par exemple en suivant [ces instructions](https://phoenixnap.com/kb/install-node-js-npm-on-windows)
+1. Installation des dépendances : dans le répertoire de l'application, utilisar la commande `npm install`
 
-This project is an application skeleton for a typical [AngularJS][angularjs] web app. You can use it
-to quickly bootstrap your angular webapp projects and dev environment for these projects.
+## Mises à jour
+1. Mise à jour d'Angular et des dépendances : `npm run update-deps`
+
+## Lancement de l'application
+Lancer le serveur web de développement : `npm start`
 
 URL de l'application : `localhost:8000`
 
-The app may offer a similar expirience as THE famous traveling site.
+## Serveur
+Voir le document [SetupServer.md](documentation/SetupServer.md).
 
 ## Choix de l'IDE
 Voir le document [IDE.md](documentation/IDE.md).
