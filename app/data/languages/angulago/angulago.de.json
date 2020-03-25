@@ -1,0 +1,11 @@
+{
+  "language": "Deutsch",
+  "menu": {
+    "login": "Einloggen",
+    "menu": "Menü",
+    "selectCurrencies": {
+      "mainCurrencies": "Hauptwährungen",
+      "allCurrencies": "Alle Währungen"
+    }
+  }
+}

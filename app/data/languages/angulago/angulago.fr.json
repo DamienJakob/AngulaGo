@@ -1,0 +1,11 @@
+{
+  "language": "Français",
+  "menu": {
+    "login": "Se connecter",
+    "menu": "Menu",
+    "selectCurrencies": {
+      "mainCurrencies": "Devises principales",
+      "allCurrencies": "Toutes les devises"
+    }
+  }
+}

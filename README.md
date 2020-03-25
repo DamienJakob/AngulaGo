@@ -3,295 +3,291 @@
 This project is an application skeleton for a typical [AngularJS][angularjs] web app. You can use it
 to quickly bootstrap your angular webapp projects and dev environment for these projects.
 
-The seed contains a sample AngularJS application and is preconfigured to install the AngularJS
-framework and a bunch of development and testing tools for instant web development gratification.
+URL de l'application : `localhost:8000`
 
 The app may offer a similar expirience as THE famous traveling site.
 
+## Choix de l'IDE
+Voir le document [IDE.md](documentation/IDE.md).
 
-## Getting Started
-
-To get you started you can simply clone the `angular-seed` repository and install the dependencies:
-
-### Prerequisites
-
-You need git to clone the `angular-seed` repository. You can get git from [here][git].
-
-We also use a number of Node.js tools to initialize and test `angular-seed`. You must have Node.js
-and its package manager (npm) installed. You can get them from [here][node].
-
-### Clone `angular-seed`
-
-Clone the `angular-seed` repository using git:
-
+## Structure de fichiers
 ```
-git clone https://github.com/angular/angular-seed.git
-cd angular-seed
-```
-
-If you just want to start a new project without the `angular-seed` commit history then you can do:
-
-```
-git clone --depth=1 https://github.com/angular/angular-seed.git <your-project-name>
-```
-
-The `depth=1` tells git to only pull down one commit worth of historical data.
-
-### Install Dependencies
-
-We have two kinds of dependencies in this project: tools and AngularJS framework code. The tools
-help us manage and test the application.
-
-* We get the tools we depend upon and the AngularJS code via `npm`, the [Node package manager][npm].
-* In order to run the end-to-end tests, you will also need to have the
-  [Java Development Kit (JDK)][jdk] installed on your machine. Check out the section on
-  [end-to-end testing](#e2e-testing) for more info.
-
-We have preconfigured `npm` to automatically copy the downloaded AngularJS files to `app/lib` so we
-can simply do:
-
-```
-npm install
-```
-
-Behind the scenes this will also call `npm run copy-libs`, which copies the AngularJS files and
-other front end dependencies. After that, you should find out that you have two new directories in
-your project.
-
-* `node_modules` - contains the npm packages for the tools we need
-* `app/lib` - contains the AngularJS framework files and other front end dependencies
-
-*Note copying the AngularJS files from `node_modules` to `app/lib` makes it easier to serve the
-files by a web server.*
-
-### Run the Application
-
-We have preconfigured the project with a simple development web server. The simplest way to start
-this server is:
-
-```
-npm start
-```
-
-Now browse to the app at [`localhost:8000/index.html`][local-app-url].
-
-
-## Directory Layout
-
-```
-app/                  --> all of the source files for the application
-  app.css               --> default stylesheet
-  core/                 --> all app specific modules
-    version/              --> version related components
-      version.js                 --> version module declaration and basic "version" value service
-      version_test.js            --> "version" value service tests
-      version-directive.js       --> custom directive that returns the current app version
-      version-directive_test.js  --> version directive tests
+app/                  --> fichiers sources de l'application
+  assets/                 --> images utilisées par l'application
+  components/             --> composants de l'application
+    selectCurrency/           --> éléments relatifs au composant selectCurrency
+      selectCurrency.html         --> template du composant
+      selectCurrency.js           --> déclaration du composant
+    ...
+  data/                   --> contient les données (langues, monnaies) de l'application (format json)
+  modules/                --> modules de l'application
+    homepage/                 --> éléments relatifs au module : homepage
+      homepage.html              --> template du module
+      homepage.js                --> déclaration du module, configuration de la route
+    search/                 --> éléments relatifs au module : search
+      homepage.html              --> template du module
+      homepage.js                --> déclaration du module, configuration de la route
+    version/                  --> éléments relatifs au module : version
+      version.js                 --> module de version
+      version-directive.js       --> directive : retourne la version actuelle de l'application
       interpolate-filter.js      --> custom interpolation filter
-      interpolate-filter_test.js --> interpolate filter tests
-  view1/                --> the view1 view template and logic
-    view1.html            --> the partial template
-    view1.js              --> the controller logic
-    view1_test.js         --> tests of the controller
-  view2/                --> the view2 view template and logic
-    view2.html            --> the partial template
-    view2.js              --> the controller logic
-    view2_test.js         --> tests of the controller
-  app.js                --> main application module
-  index.html            --> app layout file (the main html template file of the app)
-  index-async.html      --> just like index.html, but loads js files asynchronously
-e2e-tests/            --> end-to-end tests
-  protractor-conf.js    --> Protractor config file
-  scenarios.js          --> end-to-end scenarios to be run by Protractor
-karma.conf.js         --> config file for running unit tests with Karma
-package.json          --> Node.js specific metadata, including development tools dependencies
-package-lock.json     --> Npm specific metadata, including versions of installed development tools dependencies
+  app.css                --> feuille de style    
+  app.js                 --> module principal de l'application, avec contrôleur et configuration
+  index.html             --> layout de l'application
+documentation/        --> documentation annexe de l'application
+  sources                  --> fichiers et documents de conception de la documentation
 ```
 
+## Analyse
+* [Mockups de l'application](documentation/mockups.pdf)
+* [Etude du comportement responsive](documentation/responsive%20behavior.md)
+* [Visualisation du DOM](documentation/DOM_visualisation.md)
 
-## Testing
+## Structure de l'application
+### Vues
+* Chaque vue contient le menu et le pied de page.
+* Deux vues sont disponibles : page principale et recherche.
+    * La page principale contient le menu
+    * La page de recherche est vide. Elle est utilisée afin de tester la navigation.
 
-There are two kinds of tests in the `angular-seed` application: Unit tests and end-to-end tests.
+### Modules et composants
+* L'application est constituée de modules
+* Un module contient plusieurs composants, directives, pipes, etc...
+* Un composant contient un template, et de la logique interne au composant.
+* Un composant peut faire appel à un autre composant de son module
 
-### Running Unit Tests
+### Modules
+#### angulago (app.js)
+* Racine de l'appplication. Lié au layout. 
+* Contient les composants nécessaires au menu et au pied de page.
+* Charge le module correspondant à la page à afficher selon l'URL (single page application).
+* Charge le principal fichier de language.
+* Recharge le fichier de langue lorsqu'il en reçoit la demande.
+* Transmet l'information aux enfants lorsque la langue change.
 
-The `angular-seed` app comes preconfigured with unit tests. These are written in [Jasmine][jasmine],
-which we run with the [Karma][karma] test runner. We provide a Karma configuration file to run them.
+#### homepage
+* Page principale de l'application
+* Contient les composants de la page
 
-* The configuration is found at `karma.conf.js`.
-* The unit tests are found next to the code they are testing and have a `.spec.js` suffix (e.g.
-  `view1.spec.js`).
+#### search
+* Page obtenue en cliquant sur le bouton "chercher" de la page principale.
+* Page vide pour l'instant. Utilisé principalement afin de tester la navigation.
 
-The easiest way to run the unit tests is to use the supplied npm script:
+#### version
+* Petit module chargé d'afficher la version de l'application.
+ 
+### Composants
+#### menu
+* Module : angulago
+* Menu de l'application.
+* Parent des autres composants du menu.
 
-```
-npm test
-```
+#### selectLanguage
+* Module : angulago
+* Utilisé comme enfant du composant menu
+* Contient la liste déroulant de sélection de la monnaie.
+* Charge la liste des langues. 
+* Transmet l'information aux parents lorsqu'une langue est sélectionnée.
 
-This script will start the Karma test runner to execute the unit tests. Moreover, Karma will start
-watching the source and test files for changes and then re-run the tests whenever any of them
-changes.
-This is the recommended strategy; if your unit tests are being run every time you save a file then
-you receive instant feedback on any changes that break the expected code functionality.
+#### selectCurrency
+* Module : angulago
+* Utilisé comme enfant du composant menu
+* Contient la liste déroulant de sélection de la monnaie.
+* Charge le fichier de monnaie.
+* Recharge le fichier de monnaie, dans la langue voulue, lorsqu'il en reçoit l'ordre.
 
-You can also ask Karma to do a single run of the tests and then exit. This is useful if you want to
-check that a particular version of the code is operating as expected. The project contains a
-predefined script to do this:
+#### footer
+* Module : angulago
+* Pied de page. Affiche la version de l'application.
+* Fait appel au module version.
 
-```
-npm run test-single-run
-```
+#### tripSearchForm
+* Module : homepage
+* Formulaire de recherche de la page principale
+* Mis sous forme de composant plutôt qu'écrit directement dans le module afin de faciliter l'ajout futur de nouveaux éléments dans la page.
 
-
-<a name="e2e-testing"></a>
-### Running End-to-End Tests
-
-The `angular-seed` app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
-are run with the [Protractor][protractor] End-to-End test runner. It uses native events and has
-special features for AngularJS applications.
-
-* The configuration is found at `e2e-tests/protractor-conf.js`.
-* The end-to-end tests are found in `e2e-tests/scenarios.js`.
-
-Protractor simulates interaction with our web app and verifies that the application responds
-correctly. Therefore, our web server needs to be serving up the application, so that Protractor can
-interact with it.
-
-**Before starting Protractor, open a separate terminal window and run:**
-
-```
-npm start
-```
-
-In addition, since Protractor is built upon WebDriver, we need to ensure that it is installed and
-up-to-date. The `angular-seed` project is configured to do this automatically before running the
-end-to-end tests, so you don't need to worry about it. If you want to manually update the WebDriver,
-you can run:
-
-```
-npm run update-webdriver
-```
-
-Once you have ensured that the development web server hosting our application is up and running, you
-can run the end-to-end tests using the supplied npm script:
-
-```
-npm run protractor
-```
-
-This script will execute the end-to-end tests against the application being hosted on the
-development server.
-
-**Note:**
-Under the hood, Protractor uses the [Selenium Standalone Server][selenium], which in turn requires
-the [Java Development Kit (JDK)][jdk] to be installed on your local machine. Check this by running
-`java -version` from the command line.
-
-If JDK is not already installed, you can download it [here][jdk-download].
-
-
-## Updating AngularJS and other dependencies
-
-Since the AngularJS framework library code and tools are acquired through package managers (e.g.
-npm) you can use these tools to easily update the dependencies. Simply run the preconfigured script:
+### DOM
+DOM, vu sous l'angle des modules et composants
 
 ```
-npm run update-deps
+<html module:angulago>
+  <head></head>
+  <body>
+    <menu (composant d'angulago)>
+      <selectCurrency (composant d'angulago)></selectCurrency>
+      <selectLanguage (composant d'angulago)></selectLanguage>
+    </menu>
+
+    <div module:homepage (chargé par angulago, selon l'URL)>
+      <composant:tripSearchForm (composant de homepage)></tripSearchForm>
+    </div>
+
+    <footer (composant d'angulago), utilise le module version>
+    </footer>
+  </body>
+</html>
 ```
 
-This will call `npm update` and `npm run copy-libs`, which in turn will find and install the latest
-versions that match the version ranges specified in the `package.json` file.
+### Diagramme de classes
+[Diagramme de classe (pdf)](documentation/class%20diagram.pdf)
 
-If you want to update a dependency to a version newer than what the specificed range would permit,
-you can change the version range in `package.json` and then run `npm run update-deps` as usual.
+#### Pas de diagramme de conception
+Pour la conception de l'application, nous n'avons pas fait recours à un diagramme de classe. 
+En effet, nous n'avions pas encore les compétences nécessaires afin de prévoir à l'avance les classes utilisées.
 
+Voici comment l'application a été pensée initialement :
+* Un module root contenant toute l'application
+* Un composant menu, avec le menu de l'application
+    * Potentiellement des sous-composants gérant les fonctions les plus complexes du menu (langue, et monnaie dans une moindre mesure)
+* un composant footer
+* Un module par page de l'application
 
-## Loading AngularJS Asynchronously
+Pour générer l'application, nous avons eu recours à un processus itératif.
+En partant de l'application monolithique, nous avons créé un premier composant, d'abord puisant ses données directement dans son parent.
+Puis les méthodes et données spécifiques au composant ont été déplacées du parent au composant. 
+Ensuite, pour les données que le composant doit lire chez le parent, des bindings ont été ajoutés.
 
-The `angular-seed` project supports loading the framework and application scripts asynchronously.
-The special `index-async.html` is designed to support this style of loading. For it to work you must
-inject a piece of AngularJS JavaScript into the HTML page. The project has a predefined script to help
-do this:
+Au final, la structure est assez similaire à ce qui avait été prévu, 
+et nous avons maintenant une bien meilleure connaissance de la manière dont les informations peuvent être transmises entre modules et composants.
 
-```
-npm run update-index-async
-```
+#### Pas de diagramme de classe autogénéré
+Nous n'avous pour l'instant pas trouvé de bonne solution afin d'obtenir un diagramme de classe autogénéré avec AngularJs.
+La piste la plus prometteuse semble être le plugin [grunt-angular-architecture-graph](https://github.com/lucalanca/grunt-angular-architecture-graph), 
+qui est en version 0.2.6 depuis plusieurs années, utilise Grunt, ne peut analyser qu'un seul fichier js, 
+et n'apporte pas d'informations sur les méthodes et attributs des classes.
 
-This will copy the contents of the `angular-loader.js` library file into the `index-async.html`
-page. You can run this every time you update the version of AngularJS that you are using.
+### Séquence de chargement de la page
+1. Chargement d'angularjs. Cela doit évidemment être le premier script à être chargé.
+1. Chargement des modules. Une fois chargé, angularjs crée le module. 
+    * A noter que même si le module angulago dépend des autres modules, l'ordre de chargement des modules n'a pas d'importance, car angularjs se débrouille pour faire les liens.
+1. Chargement des composants. Une fois chargé, le composant se rattache à son parent.
+    * A noter que le composant doit être chargé après son module, mais peut être chargé avant d'autres modules.
+1. Le module angulago :
+    * Il analyse l'URL : redirection de `/` sur `/homepage`
+    * Il effectue une requête afin d'obtenir ses données de texte
+    * Il associe le composant menu à la balise menu, et le composant footer à la balise footer
+    * Il effectue ses bindings : titre, bindings du menu
+1. Composant menu appliqué par angulago
+    * Il effectue une requête afin d'obtenir son contenu html
+    * Le module angulago associe les composants selectLanguage et selectCurrencies à leurs balises respectives
+    * Il effectue ses bindings à son contenu html, selectLanguage et selectCurrencies.
+1. Composant selectLanguage appliqué par angulago
+    * Il effectue une requête afin d'obtenir son contenu html
+    * Il effectue une requête afin d'obtenir la liste des langues
+    * Il effectue ses bindings : génération des options de la liste déroulante
+1. Composant selectCurrencies appliqué par angulago
+    * Il effectue une requête afin d'obtenir son contenu html
+    * Il effectue une requête afin d'obtenir la liste des monnaies dans la langue appropriée
+    * Il effectue ses bindings : génération des options de la liste déroulante
+1. Composant footer appliqué par angulago
+    * Il effectue une requête afin d'obtenir son contenu html
+    * Le module version effectue un binding sur la version à afficher
+1. Le module homepage : 
+    * Il analyse l'URL, et comme il s'agit de son url il s'associe à la vue.
+    * Il effectue une requête afin d'obtenir le contenu html de la page, et l'intègre à la vue
+    * Il effectue une requête afin d'obtenir ses données de texte
+    * Il associe le composant tripSearchForm à la balise tripSearchForm.
+    * Il effectue ses bindings avec le composant tripSearchForm
+1. Le composant tripSearchForm
+    * Il effectue une requête afin d'obtenir son contenu html
+    * Il effectue ses bindings à son contenu html
 
+### Diagramme de séquence
+[Diagramme de séquence (pdf)](./documentation/HomePageSequenceDiagram.pdf)
 
-## Serving the Application Files
+## Chargement
+### Pas de lazy loading
+Si la page index.html, on remarquera que tous les composants et modules sont chargés en même temps. 
+Pour une application de cette taille, cela n'est pas vraiment un problème puisqu'ils sont tous utilisés, 
+mais cela devient problématique si la taille de l'application augmente.
 
-While AngularJS is client-side-only technology and it is possible to create AngularJS web apps that
-do not require a backend server at all, we recommend serving the project files using a local
-web server during development to avoid issues with security restrictions (sandbox) in browsers. The
-sandbox implementation varies between browsers, but quite often prevents things like cookies, XHR,
-etc to function properly when an HTML page is opened via the `file://` scheme instead of `http://`.
+Il serait donc pratique de faire du lazy loading. 
+Malheureusement, AngularJs ne permet pas nativement de le faire.
+Il existe des librairies externes qui peuvent le faire, notamment ocLazyLoad.
+Nous n'y avons pour l'instant pas fait recours, préférant rester focalisés sur le framework.
 
-### Running the App during Development
+### Chargement des données
+Il y a deux moments où il faut charger des données : lors de la création de la page et lors du changement de langue.
 
-The `angular-seed` project comes preconfigured with a local development web server. It is a Node.js
-tool called [http-server][http-server]. You can start this web server with `npm start`, but you may
-choose to install the tool globally:
+Il a été choisi que chaque module est responsable de charger ses traductions.
+Cela permet d'éviter de charger les données de modules et de leurs composants non utilisés par la page,
+sans devoir effectuer une requête par composant.
+Les composants restent responsables de charger des données plus complexes qu'une simple traduction de texte.
+C'est pourquoi le composant selectLanguage s'occupe de charger la liste des langues disponibles,
+et le composant selectCurrency s'occupe de charger la liste des monnaies de la langue appropriée.
 
-```
-sudo npm install -g http-server
-```
+Les données à charger sont les suivantes :
+* traductions du module angulago : chargées par le module angulago, mis à disposition des composants enfants en lecture seule
+* traductions du module homepage : chargées par le module homepage, mis à disposition des composants enfants en lecture seule
+* liste des langues : chargée par le composant selectLanguage, pas besoin de la recharger à un changement de langue
+* liste des monnaies : chargée par le composant selectCurrency
 
-Then you can start your own development web server to serve static files from any folder by running:
+A noter que le composant selectCurrency utilise la liste des monnaies qu'il a chargée pour afficher les monnaies disponibles,
+mais qu'il utilise aussi les traductions classiques pour afficher ses autres textes.
 
-```
-http-server -a localhost -p 8000
-```
+#### Séquence lors du changement de langue
+1. L'utilisateur sélectionne une nouvelle langue dans la liste déroulante.
+1. Le composant selectLanguage, qui contient la lise déroulante, émet le message 'languageRequest' à ses parents, accompagné de la langue requise.
+1. Le composant menu est un parent de selectLanguage, mais n'écoute pas ce message. Le module angulago, par contre, réagit au message.
+1. Le module angulago effectue deux actions :
+    * Il émet une requête XMLHttpRequest auprès du serveur pour obtenir son fichier de language, dans la langue requise.
+    * Il broadcast le le message 'setLanguage', accompagné de la langue requise, à tous ses enfants.
+1. La plupart des enfants ignorent le message, mais certains y réagissent :
+    * Le module homepage émet une requête XMLHttpRequest auprès du serveur pour obtenir son fichier de language, dans la langue requise.
+    * Le composant selectCurrencies émet une requête XMLHttpRequest auprès du serveur pour obtenir sa lise de monnaies, dans la langue requise.                     
+1. Lorsque le module angulago reçoit ses traductions, il met à jour ses données de texte.
+1. Le contenu du DOM est mis à jour pour respecter les nouvelles données, pour le module et ses enfants, qui ont accès en lecture aux données de texte du module.
+1. De même pour le module homepage.
+1. Le composant selectCurrencies met à jour sa liste de monnaies, qui est ensuite mise à jour dans le DOM. Il sélectionne après cela la monnaie par défaut associée au language.
 
-Alternatively, you can choose to configure your own web server, such as Apache or Nginx. Just
-configure your server to serve the files under the `app/` directory.
+### Diagramme de séquence
+[Diagramme de séquence (pdf)](documentation/load%20languages%20sequence%20diagram.pdf) de chargement d'une langue.
 
-### Running the App in Production
+### Données
+Les données sont enregistrées au format json dans le dossier data. 
+Elle sont chergées par le composant/module en utilisant le service $http d'AngularJs, qui utilise XMLHttpRequest.
 
-This really depends on how complex your app is and the overall infrastructure of your system, but
-the general rule is that all you need in production are the files under the `app/` directory.
-Everything else should be omitted.
+#### Structure des données
+##### Liste des langues
+Il y un fichier contenant la liste des langues, dans le répertoire data, nommé languages.json.
+Il contient la liste des longues, nommées dans leur propre language.
 
-AngularJS apps are really just a bunch of static HTML, CSS and JavaScript files that need to be
-hosted somewhere they can be accessed by browsers.
+Données :
+* tableau de langues
+    * id : identifiant unique de la langue (exemple : FR)
+    * name : nom de la langue, dans son propre language (exemple : Deutsch)
 
-If your AngularJS app is talking to the backend server via XHR or other means, you need to figure
-out what is the best way to host the static files to comply with the same origin policy if
-applicable. Usually this is done by hosting the files by the backend server or through
-reverse-proxying the backend server(s) and web server(s).
+##### Monnaies
+Il y a un fichier de monnaie par langue, dans le répertoire data/currencies.
+(à noter que pour éviter une perte de temps inutile seules les principales monnaies ont été traduites).
 
+Données :
+* defaultCurrency: id de la langue par défaut du language (pour currencies.fr.json : "CHF")
+* currencies: liste des monnaies, qui sont elles-mêmes des objets
+    * id : abréviation unique de la monnaie (CHF, USD, ...)
+    * name : nom de la monnaie
+    * mainCurrency : booléen. Indique si la monnaie doit figurer dans la sélection des monnaies courantes ou non)
 
-## Continuous Integration
+##### Contenus traduits
+Il y a un fichier de contenu par langue par module, dans le répertoire data/languages.
+Deux modules contiennent du texte traduit : angulago, et homepage.
+Les fichiers sont nommés selon la manière suivante : homepage/homepage.fr.json.
 
-### Travis CI
+Données angulago :
+* language : langue du fichier
+* menu : données du composant menu
+    * login : traduction de "login"
+    * menu : traduction de "menu"
+    * selectCurrencies : données du composant selectCurrencies
+        * mainCurrencies : traduction de "monnaies principales"
+        * allCurrencies : traduction de "toutes les monnaies"
 
-[Travis CI][travis] is a continuous integration service, which can monitor GitHub for new commits to
-your repository and execute scripts such as building the app or running tests. The `angular-seed`
-project contains a Travis configuration file, `.travis.yml`, which will cause Travis to run your
-tests when you push to GitHub.
+Données homepage :
+* language : langue du fichier
+* tripSearchForm : données du composant menu
+    * search : traduction de "recherche"
+    * ...
 
-You will need to enable the integration between Travis and GitHub. See the
-[Travis website][travis-docs] for instructions on how to do this.
-
-
-## Contact
-
-For more information on AngularJS please check out [angularjs.org][angularjs].
-
-
-[angularjs]: https://angularjs.org/
-[git]: https://git-scm.com/
-[http-server]: https://github.com/indexzero/http-server
-[jasmine]: https://jasmine.github.io/
-[jdk]: https://wikipedia.org/wiki/Java_Development_Kit
-[jdk-download]: http://www.oracle.com/technetwork/java/javase/downloads
-[karma]: https://karma-runner.github.io/
-[local-app-url]: http://localhost:8000/index.html
-[node]: https://nodejs.org/
-[npm]: https://www.npmjs.org/
-[protractor]: http://www.protractortest.org/
-[selenium]: http://docs.seleniumhq.org/
-[travis]: https://travis-ci.org/
-[travis-docs]: https://docs.travis-ci.com/user/getting-started
+## Comportement responsive
+AngularJs ne s'occupe pas du tout du comportement respnsive de l'application. 
+Il faut donc utiliser le css comme à l'accoutumée.
