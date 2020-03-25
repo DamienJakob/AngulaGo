@@ -200,6 +200,9 @@ et n'apporte pas d'informations sur les méthodes et attributs des classes.
     * Il effectue une requête afin d'obtenir son contenu html
     * Il effectue ses bindings à son contenu html
 
+### Diagramme de séquence
+[Diagramme de séquence (pdf)](./documentation/load%20languages%20sequence%20diagram.pdf)
+
 ## Chargement
 ### Pas de lazy loading
 Si la page index.html, on remarquera que tous les composants et modules sont chargés en même temps. 
