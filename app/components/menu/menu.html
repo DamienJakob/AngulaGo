@@ -1,20 +1,23 @@
-<ul class="menu">
-    <div class="header-controls">
-        <a id="showLogoHeader" href="index.html">
+<ul class="menu">    
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light row container-fluid">
+        <a class="navbar-brand showLogoHeader col-md-3 col-6" href="index.html">
             <img class="logo-image-header" src="../../assets/Logo.png" alt="AngulaGo"/>
         </a>
-        <div class="push">
-            <button type="button" class="connection-button">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav push">
+            <button type="button" class="connection-button nav-item col-sm-12 col-md-3 ">
                 <span>{{ $ctrl.textContent.login }}</span>
             </button>
-            <button type="button" class="menu-button">
+            <button type="button" class="menu-button nav-item col-md-3  col-sm-12">
                 <span>{{ $ctrl.textContent.menu }}</span>
             </button>
-            <select-currency default-language="$ctrl.defaultLanguage"
-                             text-content="$ctrl.textContent.selectCurrencies"
-            ></select-currency>
-            <select-language default-language="$ctrl.defaultLanguage">
-            </select-language>
-        </div>
-    </div>
+            <select-currency default-language="$ctrl.defaultLanguage" text-content="$ctrl.textContent.selectCurrencies" class="col-md-3  col-sm-12"></select-currency>
+            <select-language default-language="$ctrl.defaultLanguage" class="col-md-3  col-sm-12" ></select-language>
+        </ul>
+        </div>  
+    </nav>
 </ul>
