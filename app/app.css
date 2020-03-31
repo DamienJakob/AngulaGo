@@ -4,6 +4,13 @@
   list-style: none;
   border-bottom: 0.1em solid #d9d9d9;
   padding-bottom: 8px;
+  padding-left: 0px;
+  padding-inline-start: 0;
+  align-items: center;
+}
+
+menu {
+  padding-inline-start: 0;
 }
 
 .menu > li {
@@ -13,6 +20,14 @@
 .menu > li + li:before {
   content: "|";
   padding-right: 0.3em;
+}
+
+.navbar-toggler {
+  color: #4a4a4a;
+}
+
+.navbar-nav{
+  align-items: center;
 }
 
 .content {
@@ -50,16 +65,18 @@
 .logo-image-header {
   width: 20% ;
   margin: 20px;
+  min-width: 150px;
 }
 
 .footer {
-  position: fixed;
   left: 0;
-  bottom: 20px;
+  bottom: 8px;
+  position: absolute;
   width: 100%;
-  background-color: white;
+  opacity: .3;
   color: black;
   text-align: center;
+  margin-top: 50px;
 }
 
 form {
@@ -166,6 +183,12 @@ form {
     display: none;
   }
 
+  .logo-image-header {
+    max-width: 150px;
+    min-width: 80px;
+    width: 120% ;
+  }
+
   .form {
     background: #f3f3f3;
     padding: 10px 0;
@@ -182,6 +205,16 @@ form {
   .search-button {
     width: 100%;
   }
+
+  .connection-button, .menu-button {
+    text-align: left;
+    padding-left: 31px !important;
+  }
+  
+  .footer {
+    position: inherit;
+  }
+
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
@@ -194,6 +227,7 @@ form {
   .search-button {
     width: 100%;
   }
+    
 }
 
 @media screen and (min-width: 993px) and (max-width: 9999px) {
