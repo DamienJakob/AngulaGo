@@ -299,3 +299,6 @@ Données homepage :
 ## Comportement responsive
 AngularJs ne s'occupe pas du tout du comportement respnsive de l'application. 
 Il faut donc utiliser le css comme à l'accoutumée.
+
+### Diagramme de séquence de chargement de device
+[Diagramme de séquence (pdf)](./documentation/ChangeDeviceSequenceDiagram.pdf)
