@@ -29,10 +29,10 @@
                     <input class="text-input" type="text" placeholder="{{ $ctrl.textContent.searchDestination }}">
                 </div>
                 <div class="col-6 col-sm-4 col-md-2 col-lg-2 npmr">
-                    <input class="text-input" type="text" placeholder="{{ $ctrl.textContent.checkin }}">
+                    <input class="text-input" type="text" onfocus="(this.type='date')" placeholder="{{ $ctrl.textContent.checkin }}">
                 </div>
                 <div class="col-6 col-sm-4 col-md-2 col-lg-2 npml">
-                    <input class="text-input" type="text" placeholder="{{ $ctrl.textContent.checkout }}">
+                    <input class="text-input" type="text" onfocus="(this.type='date')" placeholder="{{ $ctrl.textContent.checkout }}">
                 </div>
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                     <button class="guests-button" type="button">{{ $ctrl.textContent.room }}</button>
